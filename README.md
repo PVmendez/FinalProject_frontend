@@ -2,6 +2,8 @@
 
 Proyecto final de Desarrollo Web 2023
 
+![DiagramaSecRadar](./SecRadar.jpeg)
+
 ## 📔 Repositorio
 
 [https://github.com/PVmendez/FinalProject_frontend](https://github.com/PVmendez/FinalProject_frontend)
@@ -20,6 +22,6 @@ Proyecto final de Desarrollo Web 2023
 - Node
 - NPM
 
-## 👾 Dependencias
+## 👾 Participantes
 
-- Angular
+- @PVmendez
