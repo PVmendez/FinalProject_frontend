@@ -1,8 +1,19 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-title>Dashboard</ion-title>
-        <ion-button fill="clear" routerLink="/dashboard-vulnerable-projects">Most Vulnerable Projects</ion-button>
-        <ion-button fill="clear" routerLink="/dashboard-by-vulnerability">Results by Vulnerability</ion-button>
-        <ion-button fill="clear" routerLink="/dashboard-by-engine">Results by Engine</ion-button>
-    </ion-toolbar>
+    <div>
+        <h1>Dashboard</h1> 
+    </div>
+    <h1>Dashboard</h1>
+    <ion-tabs>
+        <ion-tab-bar>
+            <ion-tab-button tab="home" routerLink="/dashboard-vulnerable-projects">
+                Most Vulnerable Proyects
+            </ion-tab-button>
+            <ion-tab-button tab="radio" routerLink="/dashboard-by-vulnerability">
+                Results By Vulnerability
+            </ion-tab-button>
+            <ion-tab-button tab="library" routerLink="/dashboard-by-engine">
+                Results By Engine
+            </ion-tab-button>
+        </ion-tab-bar>
+    </ion-tabs>
 </ion-header>

@@ -3,26 +3,32 @@
     <h1>Results by Engine</h1>
 </ion-content>
 
-<ion-grid class="Table-Engines">
-    <ion-row>
-        <ion-col>
-            <ion-icon aria-hidden="true" name="ellipse"></ion-icon>
-        </ion-col>
-        <ion-col>SAST</ion-col>
-        <ion-col>XXX</ion-col>
-    </ion-row>
-    <ion-row>
-        <ion-col>
-            <ion-icon aria-hidden="true" name="ellipse"></ion-icon>
-        </ion-col>
-        <ion-col>SCA</ion-col>
-        <ion-col>XXX</ion-col>
-    </ion-row>
-    <ion-row>
-        <ion-col>
-            <ion-icon aria-hidden="true" name="ellipse"></ion-icon>
-        </ion-col>
-        <ion-col>IaC</ion-col>
-        <ion-col>XXX</ion-col>
-    </ion-row>
-</ion-grid>
+<ion-item-group>
+    <ion-item>
+        <ion-row>
+            <div class="Projects">
+                <ion-icon color="primary" aria-hidden="true" name="ellipse"></ion-icon>
+                <ion-col>SAST</ion-col>
+            </div>
+            <ion-col class="Vulnerability">XXX</ion-col>
+        </ion-row>
+    </ion-item>
+    <ion-item>
+        <ion-row>
+            <div class="Projects">
+                <ion-icon color="secondary" aria-hidden="true" name="ellipse"></ion-icon>
+                <ion-col>SCA</ion-col>
+            </div>
+            <ion-col class="Vulnerability">XXX</ion-col>
+        </ion-row>
+    </ion-item>
+    <ion-item>
+        <ion-row>
+            <div class="Projects">
+                <ion-icon color="tertiary" aria-hidden="true" name="ellipse"></ion-icon>
+                <ion-col>IaC</ion-col>
+            </div>
+            <ion-col class="Vulnerability">XXX</ion-col>
+        </ion-row>
+    </ion-item>
+</ion-item-group>
