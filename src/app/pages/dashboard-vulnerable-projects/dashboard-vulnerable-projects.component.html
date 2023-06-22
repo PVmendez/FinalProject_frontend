@@ -1,61 +1,16 @@
 <app-dashboard></app-dashboard>
-<ion-content>
+<ion-content class="title">
     <h1>Most Vulnerable Projects</h1>
+    
+    <ion-item-group>
+        <ion-item *ngFor="let project of projects">
+            <ion-row>
+                <div class="Projects">
+                    <ion-icon [ngStyle]="{'color': getRiskColor(project.riskLevel)}" name="ellipse"></ion-icon>
+                    <ion-col>{{project.name}}</ion-col>
+                </div>
+                <ion-col class="Vulnerability">{{project.high}} High / {{project.medium}} Medium</ion-col>
+            </ion-row>
+        </ion-item>
+    </ion-item-group>
 </ion-content>
-
-<ion-item-group>
-    <ion-item>
-        <ion-row>
-            <div class="Projects">
-                <ion-icon color="danger" aria-hidden="true" name="ellipse"></ion-icon>
-                <ion-col>App1</ion-col>
-            </div>
-            <ion-col class="Vulnerability">XXX High / XXX Medium</ion-col>
-        </ion-row>
-    </ion-item>
-    <ion-item>
-        <ion-row>
-            <div class="Projects">
-                <ion-icon color="danger" aria-hidden="true" name="ellipse"></ion-icon>
-                <ion-col>App2</ion-col>
-            </div>
-            <ion-col class="Vulnerability">XXX High / XXX Medium</ion-col>
-        </ion-row>
-    </ion-item>
-    <ion-item>
-        <ion-row>
-            <div class="Projects">
-                <ion-icon color="danger" aria-hidden="true" name="ellipse"></ion-icon>
-                <ion-col>App3</ion-col>
-            </div>
-            <ion-col class="Vulnerability">XXX High / XXX Medium</ion-col>
-        </ion-row>
-    </ion-item>
-    <ion-item>
-        <ion-row>
-            <div class="Projects">
-                <ion-icon color="warning" aria-hidden="true" name="ellipse"></ion-icon>
-                <ion-col>App4</ion-col>
-            </div>
-            <ion-col class="Vulnerability">XXX High / XXX Medium</ion-col>
-        </ion-row>
-    </ion-item>
-    <ion-item>
-        <ion-row>
-            <div class="Projects">
-                <ion-icon color="warning" aria-hidden="true" name="ellipse"></ion-icon>
-                <ion-col>App5</ion-col>
-            </div>
-            <ion-col class="Vulnerability">XXX High / XXX Medium</ion-col>
-        </ion-row>
-    </ion-item>
-    <ion-item>
-        <ion-row>
-            <div class="Projects">
-                <ion-icon color="success" aria-hidden="true" name="ellipse"></ion-icon>
-                <ion-col>App6</ion-col>
-            </div>
-            <ion-col class="Vulnerability">XXX High / XXX Medium</ion-col>
-        </ion-row>
-    </ion-item>
-</ion-item-group>
