@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { DashboardByVulnerabilityComponent } from './pages/dashboard-by-vulnerability/dashboard-by-vulnerability.component';
 import { DashboardByEngineComponent } from './pages/dashboard-by-engine/dashboard-by-engine.component';
 import { DashboardVulnerableProjectsComponent } from './pages/dashboard-vulnerable-projects/dashboard-vulnerable-projects.component';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DashboardVulnerableProjectsComponent } from './pages/dashboard-vulnerab
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    IonicModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
