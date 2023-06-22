@@ -7,13 +7,15 @@ import { DashboardByVulnerabilityComponent } from './pages/dashboard-by-vulnerab
 import { DashboardByEngineComponent } from './pages/dashboard-by-engine/dashboard-by-engine.component';
 import { DashboardVulnerableProjectsComponent } from './pages/dashboard-vulnerable-projects/dashboard-vulnerable-projects.component';
 import { IonicModule } from '@ionic/angular';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardByVulnerabilityComponent,
     DashboardByEngineComponent,
-    DashboardVulnerableProjectsComponent
+    DashboardVulnerableProjectsComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
