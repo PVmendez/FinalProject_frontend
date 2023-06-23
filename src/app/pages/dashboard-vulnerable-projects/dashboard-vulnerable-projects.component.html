@@ -3,7 +3,7 @@
     <h1>Most Vulnerable Projects</h1>
     
     <ion-item-group>
-        <ion-item *ngFor="let project of projects">
+        <ion-item *ngFor="let project of projectsArray">
             <ion-row>
                 <div class="Projects">
                     <ion-icon [ngStyle]="{'color': getRiskColor(project.riskLevel)}" name="ellipse"></ion-icon>
