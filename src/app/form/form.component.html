@@ -1,0 +1,14 @@
+<section>
+    <form>
+        <div>
+            <input type="email" placeholder="Email">
+            <div class="password-container">
+                <input [type]="showPassword ? 'text' : 'password'" (ngModel)="password" name="password" placeholder="Password">
+                <span id="toggle" (click)="togglePassword()">{{ showPassword ? 'Hide' : 'Show' }}</span>
+            </div>
+            <p>Forgot your password?</p>
+        </div>
+        
+        <button class="button" type="submit">Log In</button>
+    </form>
+</section>
