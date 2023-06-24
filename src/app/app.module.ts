@@ -8,6 +8,8 @@ import { DashboardByEngineComponent } from './pages/dashboard-by-engine/dashboar
 import { DashboardVulnerableProjectsComponent } from './pages/dashboard-vulnerable-projects/dashboard-vulnerable-projects.component';
 import { IonicModule } from '@ionic/angular';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     DashboardByVulnerabilityComponent,
     DashboardByEngineComponent,
     DashboardVulnerableProjectsComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoginComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
