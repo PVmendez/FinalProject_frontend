@@ -2,14 +2,14 @@
 <ion-content>
     <h1>Results by Engine</h1>
 
-    <ion-item-group>
+    <ion-item-group *ngFor="let engine of engines">
         <ion-item>
             <ion-row>
                 <div class="Projects">
                     <ion-icon color="primary" aria-hidden="true" name="ellipse"></ion-icon>
                     <ion-col>SAST</ion-col>
                 </div>
-                <ion-col class="Vulnerability">{{sastNumber}}</ion-col>
+                <ion-col class="Vulnerability">{{engine.SAST}}</ion-col>
             </ion-row>
         </ion-item>
         <ion-item>
@@ -18,7 +18,7 @@
                     <ion-icon color="secondary" aria-hidden="true" name="ellipse"></ion-icon>
                     <ion-col>SCA</ion-col>
                 </div>
-                <ion-col class="Vulnerability">{{scaNumber}}</ion-col>
+                <ion-col class="Vulnerability">{{engine.SCA}}</ion-col>
             </ion-row>
         </ion-item>
         <ion-item>
@@ -27,7 +27,7 @@
                     <ion-icon color="tertiary" aria-hidden="true" name="ellipse"></ion-icon>
                     <ion-col>IaC</ion-col>
                 </div>
-                <ion-col class="Vulnerability">{{iacNumber}}</ion-col>
+                <ion-col class="Vulnerability">{{engine.IaC}}</ion-col>
             </ion-row>
         </ion-item>
     </ion-item-group>

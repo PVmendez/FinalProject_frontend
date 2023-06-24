@@ -10,7 +10,5 @@ export class DashboardByEngineComponent {
 
   constructor(private dashboardService: DashboardService) {}
 
-  sastNumber = this.dashboardService.getSAST();
-  iacNumber = this.dashboardService.getIaC();
-  scaNumber = this.dashboardService.getSCA();
+  engines = this.dashboardService.getEngines();
 }

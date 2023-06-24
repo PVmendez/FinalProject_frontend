@@ -8,7 +8,7 @@ import { DashboardService } from 'src/app/services/dashboard.service';
   styleUrls: ['./dashboard-vulnerable-projects.component.css']
 })
 export class DashboardVulnerableProjectsComponent {
-  projectsArray: any[] = [];
+  projectsArray:  Project[] = [];
 
   constructor(private dashboardService: DashboardService) {}
 
@@ -27,8 +27,7 @@ export class DashboardVulnerableProjectsComponent {
         case 'Low':
           return 'green';
         default:
-          return 'black'; // Color predeterminado si el valor no coincide con ninguna opción
+          return 'black';
       }
     }
-    
   }

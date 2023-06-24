@@ -9,7 +9,7 @@
                     <ion-icon [ngStyle]="{'color': getRiskColor(project.risk_level)}" name="ellipse"></ion-icon>
                     <ion-col>{{project.project_name}}</ion-col>
                 </div>
-                <ion-col class="Vulnerability">{{project.high}} High / {{project.medium}} Medium</ion-col>
+                <ion-col class="Vulnerability">{{project.levels.high}} High / {{project.levels.medium}} Medium</ion-col>
             </ion-row>
         </ion-item>
     </ion-item-group>
