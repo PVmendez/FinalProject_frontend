@@ -1,0 +1,34 @@
+<app-dashboard></app-dashboard>
+<ion-content>
+    <h1>Results by Engine</h1>
+
+    <ion-item-group>
+        <ion-item>
+            <ion-row>
+                <div class="Projects">
+                    <ion-icon color="primary" aria-hidden="true" name="ellipse"></ion-icon>
+                    <ion-col>SAST</ion-col>
+                </div>
+                <ion-col class="Vulnerability">{{sastNumber}}</ion-col>
+            </ion-row>
+        </ion-item>
+        <ion-item>
+            <ion-row>
+                <div class="Projects">
+                    <ion-icon color="secondary" aria-hidden="true" name="ellipse"></ion-icon>
+                    <ion-col>SCA</ion-col>
+                </div>
+                <ion-col class="Vulnerability">{{scaNumber}}</ion-col>
+            </ion-row>
+        </ion-item>
+        <ion-item>
+            <ion-row>
+                <div class="Projects">
+                    <ion-icon color="tertiary" aria-hidden="true" name="ellipse"></ion-icon>
+                    <ion-col>IaC</ion-col>
+                </div>
+                <ion-col class="Vulnerability">{{iacNumber}}</ion-col>
+            </ion-row>
+        </ion-item>
+    </ion-item-group>
+</ion-content>

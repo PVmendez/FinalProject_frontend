@@ -1,0 +1,15 @@
+ion-row {
+    width: 100%;
+}
+ion-col {
+    white-space: nowrap;
+}
+ion-icon{
+    margin-right: 1pc;
+}
+.Vulnerability {
+    text-align: end;
+}
+.Projects {
+    margin: auto;
+}
