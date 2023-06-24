@@ -6,8 +6,8 @@
         <ion-item *ngFor="let project of projectsArray">
             <ion-row>
                 <div class="Projects">
-                    <ion-icon [ngStyle]="{'color': getRiskColor(project.riskLevel)}" name="ellipse"></ion-icon>
-                    <ion-col>{{project.name}}</ion-col>
+                    <ion-icon [ngStyle]="{'color': getRiskColor(project.risk_level)}" name="ellipse"></ion-icon>
+                    <ion-col>{{project.project_name}}</ion-col>
                 </div>
                 <ion-col class="Vulnerability">{{project.high}} High / {{project.medium}} Medium</ion-col>
             </ion-row>

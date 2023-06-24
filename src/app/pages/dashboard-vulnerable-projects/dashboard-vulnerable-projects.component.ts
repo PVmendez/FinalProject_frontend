@@ -8,23 +8,23 @@ import { DashboardService } from 'src/app/services/dashboard.service';
   styleUrls: ['./dashboard-vulnerable-projects.component.css']
 })
 export class DashboardVulnerableProjectsComponent {
-  projectsArray: Project[] = [];
+  projectsArray: any[] = [];
 
   constructor(private dashboardService: DashboardService) {}
 
   ngOnInit() {
-    this.dashboardService.getMostVulnerableProjects().subscribe(projects => {
-      this.projectsArray = projects;
+    this.dashboardService.getMostVulnerableProjects().then((projectsArray) => {
+      this.projectsArray = projectsArray
     });
   }
   
   getRiskColor(riskLevel: string) {
       switch (riskLevel) {
-        case 'high':
+        case 'High':
           return 'red';
-        case 'medium':
+        case 'Medium':
           return 'yellow';
-        case 'low':
+        case 'Low':
           return 'green';
         default:
           return 'black'; // Color predeterminado si el valor no coincide con ninguna opción

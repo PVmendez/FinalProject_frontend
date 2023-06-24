@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Project } from '../interfaces/project';
 import { Vulnerability } from '../interfaces/vulnerability';
-import { Observable, map, of } from 'rxjs';
+import { Observable, map, of, toArray } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardService {
 
-  arrayProjectosPruebita: Project[] = [
+  /*arrayProjectosPruebita: Project[] = [
     {
       riskLevel: 'medium',
       name: 'App1',
@@ -24,33 +24,27 @@ export class DashboardService {
       medium: 25,
       date: new Date('2023-06-23')
     }
-  ]
+  ]*/
 
   arrayVulnerabilidadesPruebita: Vulnerability[] = [
-    {
-      riskLevel: 'low',
-      name: 'Vul1',
-      total: 115
-    },
-    {
-      riskLevel: 'high',
-      name: 'Vul3',
-      total: 95
-    },
-    {
-      riskLevel: 'medium',
-      name: 'Vul2',
-      total: 102
-    }
-  ]
+     {
+       riskLevel: 'low',
+       name: 'Vul1',
+       total: 115
+     },
+     {
+       riskLevel: 'high',
+       name: 'Vul3',
+       total: 95
+     },
+     {
+       riskLevel: 'medium',
+       name: 'Vul2',
+       total: 102
+     }
+   ]
 
-  constructor(/*private http: HttpClient*/) {  }
-
-  sortProjects(projects$: Observable<Project[]>): Observable<Project[]> {
-    return projects$.pipe(
-      map(projects => projects.sort(this.orderByRiskLevel))
-    );
-  }
+  constructor() { }
 
   sortVulnerabilities(vulnerabilities$: Observable<Vulnerability[]>): Observable<Vulnerability[]> {
     return vulnerabilities$.pipe(
@@ -78,14 +72,14 @@ export class DashboardService {
     // return this.http.get<number>('link al back');
   }
 
-  getMostVulnerableProjects() {
-    return this.sortProjects(of(this.arrayProjectosPruebita)/*this.http.get<Project[]>('link')*/)
-    //return this.arrayProjectosPruebita.sort(this.orderByRiskLevel);
-    //return sortedProjects;
+  async getMostVulnerableProjects() {
+    const data$ = await fetch('http://localhost:3000/vulnerableprojects');
+    const response = await data$.json();
+    console.log("hola" + response);
+    return response;
   }
 
   getVulnerabilities() {
     return this.sortVulnerabilities(of(this.arrayVulnerabilidadesPruebita))
-    //return this.arrayVulnerabilidadesPruebita.sort(this.orderByRiskLevel);
   }
 }
