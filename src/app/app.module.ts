@@ -10,6 +10,7 @@ import { IonicModule } from '@ionic/angular';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { FormComponent } from './form/form.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormComponent } from './form/form.component';
     DashboardVulnerableProjectsComponent,
     DashboardComponent,
     LoginComponent,
-    FormComponent
+    FormComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
