@@ -4,12 +4,17 @@ import { DashboardVulnerableProjectsComponent } from './pages/dashboard-vulnerab
 import { DashboardByEngineComponent } from './pages/dashboard-by-engine/dashboard-by-engine.component';
 import { DashboardByVulnerabilityComponent } from './pages/dashboard-by-vulnerability/dashboard-by-vulnerability.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'dashboard',
