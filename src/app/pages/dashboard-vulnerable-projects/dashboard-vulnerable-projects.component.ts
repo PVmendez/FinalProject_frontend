@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Project } from 'src/app/interfaces/project';
 import { DashboardService } from 'src/app/services/dashboard.service';
+import { HelperService } from 'src/app/services/helper.service';
 
 @Component({
   selector: 'app-dashboard-vulnerable-projects',
@@ -9,25 +10,13 @@ import { DashboardService } from 'src/app/services/dashboard.service';
 })
 export class DashboardVulnerableProjectsComponent {
   projectsArray:  Project[] = [];
+  getColor = this.helper.getRiskColor;
 
-  constructor(private dashboardService: DashboardService) {}
+  constructor(private dashboardService: DashboardService, private helper: HelperService) {}
 
   ngOnInit() {
     this.dashboardService.getMostVulnerableProjects().then((projectsArray) => {
       this.projectsArray = projectsArray
     });
   }
-  
-  getRiskColor(riskLevel: string) {
-      switch (riskLevel) {
-        case 'High':
-          return 'red';
-        case 'Medium':
-          return 'yellow';
-        case 'Low':
-          return 'green';
-        default:
-          return 'black';
-      }
-    }
   }
