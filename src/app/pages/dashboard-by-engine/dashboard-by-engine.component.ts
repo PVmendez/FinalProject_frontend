@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Engine } from 'src/app/interfaces/engine';
 import { DashboardService } from 'src/app/services/dashboard.service';
 
 @Component({
@@ -7,10 +8,17 @@ import { DashboardService } from 'src/app/services/dashboard.service';
   styleUrls: ['./dashboard-by-engine.component.css']
 })
 export class DashboardByEngineComponent {
+  engines: Engine = {
+    SAST: 0,
+    SCA: 0,
+    IaC: 0,
+  };
 
-  constructor(private dashboardService: DashboardService) {}
+  constructor(private dashboardService: DashboardService) { }
 
-  sastNumber = this.dashboardService.getSAST();
-  iacNumber = this.dashboardService.getIaC();
-  scaNumber = this.dashboardService.getSCA();
+  ngOnInit() {
+    this.dashboardService.getEngines().then((enginesArray) => {
+      this.engines = enginesArray
+    });
+  }
 }

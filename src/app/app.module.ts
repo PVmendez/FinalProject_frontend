@@ -10,6 +10,7 @@ import { IonicModule } from '@ionic/angular';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { FormComponent } from './form/form.component';
+import { MenuComponent } from './menu/menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardVulnerableProjectsComponent,
     DashboardComponent,
     LoginComponent,
-    FormComponent
+    FormComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

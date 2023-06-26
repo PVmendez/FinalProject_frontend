@@ -21,6 +21,10 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: 'dashboard-vulnerable-projects',
     component: DashboardVulnerableProjectsComponent
   },

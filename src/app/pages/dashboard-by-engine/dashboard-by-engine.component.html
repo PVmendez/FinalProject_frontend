@@ -9,7 +9,7 @@
                     <ion-icon color="primary" aria-hidden="true" name="ellipse"></ion-icon>
                     <ion-col>SAST</ion-col>
                 </div>
-                <ion-col class="Vulnerability">{{sastNumber}}</ion-col>
+                <ion-col class="Vulnerability">{{engines.SAST}}</ion-col>
             </ion-row>
         </ion-item>
         <ion-item>
@@ -18,7 +18,7 @@
                     <ion-icon color="secondary" aria-hidden="true" name="ellipse"></ion-icon>
                     <ion-col>SCA</ion-col>
                 </div>
-                <ion-col class="Vulnerability">{{scaNumber}}</ion-col>
+                <ion-col class="Vulnerability">{{engines.SCA}}</ion-col>
             </ion-row>
         </ion-item>
         <ion-item>
@@ -27,7 +27,7 @@
                     <ion-icon color="tertiary" aria-hidden="true" name="ellipse"></ion-icon>
                     <ion-col>IaC</ion-col>
                 </div>
-                <ion-col class="Vulnerability">{{iacNumber}}</ion-col>
+                <ion-col class="Vulnerability">{{engines.IaC}}</ion-col>
             </ion-row>
         </ion-item>
     </ion-item-group>
