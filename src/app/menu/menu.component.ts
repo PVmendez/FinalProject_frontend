@@ -10,7 +10,4 @@ export class MenuComponent {
 
   constructor(private router: Router) {}
 
-  // isLoginPage(): boolean {
-  //   return !this.router.url.includes("/login");
-  // }
 }
