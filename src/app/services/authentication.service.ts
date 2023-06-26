@@ -16,7 +16,7 @@ export class AuthenticationService {
       next: (response) => {
         console.log(response);
         this.isValid = true;
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard-vulnerable-projects']);
       },
       error: (error) => {
         if(error.status == 404){
