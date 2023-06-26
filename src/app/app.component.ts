@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FinalProject_frontend';
+
+  constructor(private loginPrd: AuthenticationService) {
+
+  }
+
+  public visualizeDashboard(){
+    return this.loginPrd.enableLogin();
+  }
 }
