@@ -13,8 +13,7 @@ export class AuthenticationService {
 
   public loginAuth(obj: any) {
     this.http.post('http://localhost:3000/login', obj).subscribe({
-      next: (response) => {
-        console.log(response);
+      next: () => {
         this.isValid = true;
         this.router.navigate(['/dashboard-vulnerable-projects']);
       },
