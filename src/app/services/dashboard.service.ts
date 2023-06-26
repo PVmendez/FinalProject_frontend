@@ -5,8 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class DashboardService {
 
-  constructor() { }
-
   async getEngines() {
     const data = await fetch('http://localhost:3000/engines');
     const response = await data.json();
