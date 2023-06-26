@@ -8,9 +8,13 @@ import { DashboardService } from 'src/app/services/dashboard.service';
   styleUrls: ['./dashboard-by-engine.component.css']
 })
 export class DashboardByEngineComponent {
-  engines: Engine[] = []
+  engines: Engine = {
+    SAST: 0,
+    SCA: 0,
+    IaC: 0,
+  };
 
-  constructor(private dashboardService: DashboardService) {}
+  constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
     this.dashboardService.getEngines().then((enginesArray) => {
