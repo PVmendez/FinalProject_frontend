@@ -14,7 +14,6 @@ export class AppComponent {
   }
 
   public visualizeDashboard(){
-    console.log(this.loginPrd.enableLogin());
     return this.loginPrd.enableLogin();
   }
 }
