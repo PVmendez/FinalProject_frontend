@@ -16,7 +16,6 @@ export class DashboardVulnerableProjectsComponent {
   async ngOnInit() {
     const projectsArray = await this.dashboardService.getMostVulnerableProjects()
     this.projectsArray = projectsArray;
-    console.log(this.projectsArray)
   }
 
   getColor(risk: string) {
