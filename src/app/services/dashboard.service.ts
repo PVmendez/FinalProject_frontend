@@ -1,25 +1,30 @@
 import { Injectable } from '@angular/core';
+import Api from '../helpers/api';
+import { LocalStorageService } from 'angular-web-storage';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DashboardService {
+  jwtToken = '';
+  constructor(private localStorage: LocalStorageService) {}
+
+  ngOnInit() {
+    this.jwtToken = this.localStorage.get('token');
+  }
 
   async getEngines() {
-    const data = await fetch('http://localhost:3000/engines');
-    const response = await data.json();
+    const response = Api('/engines', 'GET', this.jwtToken);
     return response;
   }
 
   async getMostVulnerableProjects() {
-    const data = await fetch('http://localhost:3000/projects');
-    const response = await data.json();
+    const response = Api('/projects', 'GET', this.jwtToken);
     return response;
   }
 
-   async getVulnerabilities() {
-     const data = await fetch('http://localhost:3000/vulnerabilities');
-     const response = await data.json();
-     return response;
-   }
+  async getVulnerabilities() {
+    const response = Api('/vulnerabilities', 'GET', this.jwtToken);
+    return response;
+  }
 }

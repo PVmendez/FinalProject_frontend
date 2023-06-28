@@ -13,6 +13,7 @@ import { FormComponent } from './form/form.component';
 import { MenuComponent } from './menu/menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     LoginComponent,
     FormComponent,
-    MenuComponent
+    MenuComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
