@@ -13,6 +13,8 @@ import { FormComponent } from './form/form.component';
 import { MenuComponent } from './menu/menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { GraphsComponent } from './graphs/graphs.component';
+import { NgApexchartsModule } from "ng-apexcharts";
 
 @NgModule({
   declarations: [
@@ -23,15 +25,18 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     LoginComponent,
     FormComponent,
-    MenuComponent
+    MenuComponent,
+    GraphsComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
     IonicModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    NgApexchartsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

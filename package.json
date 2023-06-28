@@ -19,6 +19,9 @@
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
     "@ionic/angular": "^7.1.0",
+    "@ionic/cordova-builders": "^9.0.0",
+    "apexcharts": "^3.41.0",
+    "ng-apexcharts": "^1.7.7",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
@@ -27,6 +30,7 @@
     "@angular-devkit/build-angular": "^16.0.0",
     "@angular/cli": "~16.0.0",
     "@angular/compiler-cli": "^16.0.0",
+    "@ionic/angular-toolkit": "^9.0.0",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
@@ -34,7 +38,6 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "~5.0.2",
-    "@ionic/angular-toolkit": "latest"
+    "typescript": "~5.0.2"
   }
 }
