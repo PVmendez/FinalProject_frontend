@@ -16,9 +16,8 @@ export class DashboardByEngineComponent implements OnInit {
 
   constructor(private dashboardService: DashboardService) { }
 
-  ngOnInit(): void {
-    this.dashboardService.getEngines().then((enginesArray: Engine) => {
-      this.engines = enginesArray;
-    });
+  async ngOnInit() {
+    const enginesArray = await this.dashboardService.getEngines()
+    this.engines = enginesArray;
   }
 }
