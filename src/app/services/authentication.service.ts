@@ -30,6 +30,7 @@ export class AuthenticationService {
   public logout() {
     try {
       this.localStorage.remove('token');
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }
