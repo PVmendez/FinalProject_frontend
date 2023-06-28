@@ -25,7 +25,6 @@ export type ChartOptions = {
 export class GraphsComponent implements OnChanges {
   public chartOptions!: ChartOptions;
   @Input()engine!: Engine;
-  @Input()currentRoute!: string;
 
   constructor() {
 

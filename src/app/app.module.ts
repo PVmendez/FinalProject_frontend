@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GraphsComponent } from './graphs/graphs.component';
 import { NgApexchartsModule } from "ng-apexcharts";
+import { VulnerabilityGraphComponent } from './vulnerability-graph/vulnerability-graph.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { NgApexchartsModule } from "ng-apexcharts";
     FormComponent,
     MenuComponent,
     GraphsComponent,
+    VulnerabilityGraphComponent,
   ],
   
   imports: [
