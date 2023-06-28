@@ -27,6 +27,14 @@ export class AuthenticationService {
     });
   }
 
+  public logout() {
+    try {
+      this.localStorage.remove('token');
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   public enableLogin() {
     return this.isValid;
   }

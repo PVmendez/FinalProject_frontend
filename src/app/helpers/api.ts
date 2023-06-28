@@ -1,8 +1,6 @@
-import { LoginResponse } from "../interfaces/LoginResponse";
-
 const urlApi = 'http://localhost:3000';
 
-async function Api(url: string, method: string, token: string, body?: Object): Promise<LoginResponse> {
+async function Api(url: string, method: string, token: string, body?: Object) {
   const options: any = {
     method,
     headers: new Headers({
@@ -21,7 +19,7 @@ async function Api(url: string, method: string, token: string, body?: Object): P
     throw new Error('API request failed');
   }
 
-  return responseData as LoginResponse;
+  return responseData;
 }
 
 export default Api;
