@@ -1,0 +1,19 @@
+<ion-header>
+    <div>
+        <h1>Last 7 Days</h1> 
+    </div>
+</ion-header>
+<ion-content>
+
+    <ion-item-group>
+        <ion-item *ngFor="let day of lastWeekVulnerabilities">
+            <ion-row>
+                <div class="Days">
+                    <ion-icon aria-hidden="true" name="ellipse"></ion-icon>
+                    <ion-col>{{day.day}}</ion-col>
+                </div>
+                <ion-col class="Vulnerability">{{day.total}}</ion-col>
+            </ion-row>
+        </ion-item>
+    </ion-item-group>
+</ion-content>

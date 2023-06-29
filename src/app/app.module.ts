@@ -14,6 +14,7 @@ import { MenuComponent } from './menu/menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { LastWeekComponent } from './pages/last-week/last-week.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     LoginComponent,
     FormComponent,
     MenuComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    LastWeekComponent
   ],
   imports: [
     BrowserModule,

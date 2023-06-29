@@ -4,6 +4,7 @@ import { DashboardVulnerableProjectsComponent } from './pages/dashboard-vulnerab
 import { DashboardByEngineComponent } from './pages/dashboard-by-engine/dashboard-by-engine.component';
 import { DashboardByVulnerabilityComponent } from './pages/dashboard-by-vulnerability/dashboard-by-vulnerability.component';
 import { LoginComponent } from './login/login.component';
+import { LastWeekComponent } from './pages/last-week/last-week.component';
 import { AuthGuard } from './helpers/authGuard';
 
 const routes: Routes = [
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'lastWeek',
+    component: LastWeekComponent
   },
   {
     path: 'dashboard-vulnerable-projects',
