@@ -13,10 +13,9 @@ export class DashboardVulnerableProjectsComponent {
 
   constructor(private dashboardService: DashboardService) { }
 
-  ngOnInit() {
-    this.dashboardService.getMostVulnerableProjects().then((projectsArray) => {
-      this.projectsArray = projectsArray
-    });
+  async ngOnInit() {
+    const projectsArray = await this.dashboardService.getMostVulnerableProjects()
+    this.projectsArray = projectsArray;
   }
 
   getColor(risk: string) {

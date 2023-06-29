@@ -1,29 +1,39 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { LocalStorageService } from 'angular-web-storage';
+import { LoginResponse } from '../interfaces/LoginResponse';
+import Api from '../helpers/api';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
-
   private isValid: boolean = false;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private router: Router,
+    private localStorage: LocalStorageService
+  ) {}
 
-  public loginAuth(obj: any) {
-    this.http.post('http://localhost:3000/login', obj).subscribe({
-      next: () => {
-        this.isValid = true;
+  public async loginAuth(obj: any) {
+    Api('/login', 'POST', '', obj).then((response: LoginResponse) => {
+      try {
+        this.localStorage.set('token', response.token);
         this.router.navigate(['/dashboard-vulnerable-projects']);
-      },
-      error: (error) => {
-        if(error.status == 404){
-          alert("Usuario no encontrado");
-        }
-        console.error(error);
-      },
+      } catch (error) {
+        console.log(error);
+      }
     });
+  }
+
+  public logout() {
+    try {
+      this.localStorage.remove('token');
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   public enableLogin() {

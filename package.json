@@ -22,6 +22,7 @@
     "@ionic/cordova-builders": "^9.0.0",
     "apexcharts": "^3.41.0",
     "ng-apexcharts": "^1.7.7",
+    "angular-web-storage": "^16.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
@@ -30,7 +31,7 @@
     "@angular-devkit/build-angular": "^16.0.0",
     "@angular/cli": "~16.0.0",
     "@angular/compiler-cli": "^16.0.0",
-    "@ionic/angular-toolkit": "^9.0.0",
+    "@ionic/angular-toolkit": "latest",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",

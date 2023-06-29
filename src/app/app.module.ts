@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { GraphsComponent } from './graphs/graphs.component';
 import { NgApexchartsModule } from "ng-apexcharts";
 import { VulnerabilityGraphComponent } from './vulnerability-graph/vulnerability-graph.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { VulnerabilityGraphComponent } from './vulnerability-graph/vulnerability
     MenuComponent,
     GraphsComponent,
     VulnerabilityGraphComponent,
+    UserProfileComponent
   ],
   
   imports: [

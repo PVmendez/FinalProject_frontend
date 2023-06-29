@@ -1,24 +1,16 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { DashboardVulnerableProjectsComponent } from './pages/dashboard-vulnerable-projects/dashboard-vulnerable-projects.component';
 import { DashboardByEngineComponent } from './pages/dashboard-by-engine/dashboard-by-engine.component';
 import { DashboardByVulnerabilityComponent } from './pages/dashboard-by-vulnerability/dashboard-by-vulnerability.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './helpers/authGuard';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full'
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent
+    redirectTo: 'login',
+    pathMatch: 'full',
   },
   {
     path: 'login',
@@ -26,15 +18,18 @@ const routes: Routes = [
   },
   {
     path: 'dashboard-vulnerable-projects',
-    component: DashboardVulnerableProjectsComponent
+    component: DashboardVulnerableProjectsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'dashboard-by-engine',
-    component: DashboardByEngineComponent
+    component: DashboardByEngineComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'dashboard-by-vulnerability',
-    component: DashboardByVulnerabilityComponent
+    component: DashboardByVulnerabilityComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
