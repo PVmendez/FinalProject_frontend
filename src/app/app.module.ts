@@ -13,6 +13,9 @@ import { FormComponent } from './form/form.component';
 import { MenuComponent } from './menu/menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { GraphsComponent } from './graphs/graphs.component';
+import { NgApexchartsModule } from "ng-apexcharts";
+import { VulnerabilityGraphComponent } from './vulnerability-graph/vulnerability-graph.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
@@ -25,15 +28,19 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     LoginComponent,
     FormComponent,
     MenuComponent,
+    GraphsComponent,
+    VulnerabilityGraphComponent,
     UserProfileComponent
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
     IonicModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    NgApexchartsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
