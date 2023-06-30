@@ -1,4 +1,5 @@
-body, section {
+body,
+section {
     height: 100%;
 }
 
@@ -6,53 +7,65 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
- } 
-
-input{
-	width: 93%;
-	height: 100%;
-	background: rgb(246, 246, 246);
-	justify-content: center;
-	display: flex;
-	margin: 1.5rem auto;
-	padding: 1.2rem;
-	border: 1px solid;
-	outline: none;
-	border-radius: 8px;
-    border-color: rgb(234, 234, 234, 1);
 }
 
+.password-container,
+.email {
+    width: 93%;
+    height: 4rem;
+    background: rgb(246, 246, 246);
+    justify-content: space-between;
+    display: flex;
+    margin: 1.5rem auto;
+    padding: 0 1.2rem 0 1.2rem;
+    border: 1px solid;
+    border-radius: 8px;
+    border-color: rgb(234, 234, 234, 1);
+    align-items: center;
+}
+
+input:focus {
+    outline: none;
+}
+
+input {
+    border: none;
+    background-color: transparent;
+}
 
 .button {
-    position: fixed;
-    bottom: 100px;
     width: 93%;
     border: none;
     padding: 18px 28px;
     font-size: 16px;
-    text-align: center;
-    align-self: center;
     background-color: #4E6E81;
     color: #fff;
     border-radius: 100px;
-}
-
-.password-container {
-    position: relative;
+    margin: 0 auto;
+    display: block;
 }
 
 #toggle {
-    position: absolute;
-    top: 50%;
-    right: 25px;
-    transform: translateY(-50%);
     cursor: pointer;
     color: #4E6E81;
 }
 
 p {
-    margin-top: 0;
+    margin-top: 1rem;
     text-align: right;
-    color: #4E6E81;
     padding-right: 1.5rem;
+    color: #1F1F1F;
+}
+
+@media screen and (min-width: 500px) {
+
+    .password-container,
+    .email,
+    .button {
+        width: 20rem;
+    }
+
+    p {
+        text-align: center;
+    }
 }
