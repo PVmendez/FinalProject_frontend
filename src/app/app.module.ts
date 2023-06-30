@@ -17,6 +17,7 @@ import { GraphsComponent } from './graphs/graphs.component';
 import { NgApexchartsModule } from "ng-apexcharts";
 import { VulnerabilityGraphComponent } from './vulnerability-graph/vulnerability-graph.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ProjectsGraphComponent } from './projects-graph/projects-graph.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     MenuComponent,
     GraphsComponent,
     VulnerabilityGraphComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ProjectsGraphComponent
   ],
   
   imports: [
