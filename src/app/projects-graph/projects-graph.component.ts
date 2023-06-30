@@ -1,6 +1,7 @@
 import { Component, Inject, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from "@angular/core";
 import { ApexStroke, ChartComponent } from "ng-apexcharts";
-import { Vulnerability } from "../interfaces/vulnerability";
+import { Project } from "../interfaces/project";
+
 
 import {
   ApexNonAxisChartSeries,
@@ -16,38 +17,41 @@ export type ChartOptions = {
   colors: any[];
 };
 
-
 @Component({
-  selector: 'app-vulnerability-graph',
-  templateUrl: './vulnerability-graph.component.html',
-  styleUrls: ['./vulnerability-graph.component.css']
+  selector: 'app-projects-graph',
+  templateUrl: './projects-graph.component.html',
+  styleUrls: ['./projects-graph.component.css']
 })
-export class VulnerabilityGraphComponent implements OnChanges {
+export class ProjectsGraphComponent implements OnChanges {
   public chartOptions!: ChartOptions;
-  @Input()vulnerabilities!: Vulnerability[];
+  @Input()projects!: Project[];
 
-  constructor() {
+  constructor () {
   }
 
-  totalHighs : number = 0;
-  totalMedium : number = 0;
+  highProjects : number = 0;
+  mediumProjects : number = 0;
+  lowProjects : number = 0;
 
   calculatetotals() {
-    for (let index = 0; index < this.vulnerabilities?.length; index++) {
-      if (this.vulnerabilities[index].risk === 'Medium') {
-        this.totalMedium = this.totalMedium + this.vulnerabilities[index].total;  
+    for (let index = 0; index < this.projects.length; index++) {
+      if (this.projects[index].risk_level === 'High'){
+        this.highProjects += 1;
       }
-      else if (this.vulnerabilities[index].risk === 'High'){
-        this.totalHighs = this.totalHighs + this.vulnerabilities[index].total;
+      else if (this.projects[index].risk_level === 'Medium'){
+        this.mediumProjects += 1;
+      }
+      else if (this.projects[index].risk_level === 'Low'){
+        this.lowProjects += 1;
       }
     }
   }
-  
+
   ngOnChanges() {
     this.calculatetotals();
     this.chartOptions = {
-      colors: ["#f30900", "#fff50e"],
-      series: [this.totalHighs, this.totalMedium],
+      colors: ["#f30900", "#fff50e", "#008000"],
+      series: [this.highProjects, this.mediumProjects, this.lowProjects],
       chart: {
         height: 350,
         animations: {
@@ -55,7 +59,7 @@ export class VulnerabilityGraphComponent implements OnChanges {
         },
         type: "donut"
       },
-      labels: ["Highs", "Mediums"],
+      labels: ["High Risk", "Medium Risk", "Low Risk"],
       responsive: [
         {
           breakpoint: 200,
@@ -71,4 +75,5 @@ export class VulnerabilityGraphComponent implements OnChanges {
       ]
     };  
   }
+
 }
