@@ -14,7 +14,7 @@
         <ion-icon name="{{ showPassword ? 'eye-off' : 'eye' }}" id="toggle" (click)="togglePassword()"></ion-icon>
     </ion-item>
     <ion-item lines="full">
-        <ion-input placeholder="Confirm Password" formControlName="password" [type]="showConfirmPassword ? 'text' : 'Password'"
+        <ion-input placeholder="Confirm Password" formControlName="confirmPassword" [type]="showConfirmPassword ? 'text' : 'Password'"
             (ngModel)="confirmPassword" name="confirm_password"></ion-input>
         <ion-icon name="{{ showConfirmPassword ? 'eye-off' : 'eye' }}" id="toggleConfirm" (click)="toggleConfirmPassword()"></ion-icon>
     </ion-item>
