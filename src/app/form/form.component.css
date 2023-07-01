@@ -7,17 +7,15 @@ form {
     flex-direction: column;
     justify-content: space-evenly;
     padding: 1.5rem;
- } 
- .button {
-    width: 20rem;
+} 
+.button {
     border: none;
     font-size: 16px;
     background-color: #4E6E81;
     color: #fff;
     border-radius: 100px;
 }
-
-.email, .password {
+.email, .password, .button {
     display: block;
     margin: 0 auto;
     width: 20rem;
@@ -36,7 +34,6 @@ ion-item::part(native) {
     margin-bottom: 1rem;
     padding-left: 30px;
 }
-
 @media screen and (min-width: 400px) {
     ion-text {
         text-align: center;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from '../services/authentication.service';
 import { ToastController } from '@ionic/angular';
+import { MessagesService } from '../services/messages.service';
 
 @Component({
   selector: 'app-signupform',
@@ -23,7 +24,7 @@ export class SignupformComponent implements OnInit {
   showPassword: boolean = false;
   showConfirmPassword: boolean = false;
 
-  constructor(private fb: FormBuilder, private signUpPrv: AuthenticationService,private toastController: ToastController) { }
+  constructor(private fb: FormBuilder, private signUpPrv: AuthenticationService, private messageService: MessagesService) { }
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
@@ -47,29 +48,20 @@ export class SignupformComponent implements OnInit {
 
   public submitForm() {
     if (this.myForm.valid) {
-      this.signUpPrv.signUp(this.myForm.value);
+      this.signUpPrv.signUp(this.myForm.value)
+      .then(res => {
+        this.messageService.showMessage("User created", 'success')
+      })
+      .catch(err => {
+        this.messageService.showMessage("User not created", 'danger')
+      })
     } else {
-      this.showErrorMessage('Passwords do not match');
+      this.messageService.showMessage('Passwords do not match', 'danger');
     }
   }
 
   togglePassword() {
     this.showPassword = !this.showPassword;
-  }
-  
-  toggleConfirmPassword() {
-    this.showConfirmPassword = !this.showConfirmPassword
-  }
-
-  async showErrorMessage(errorMessage: string) {
-    const toast = await this.toastController.create({
-      message: errorMessage,
-      duration: 3000,
-      color: 'danger',
-      position: 'top'
-    });
-  
-    toast.present();
+    this.showConfirmPassword = !this.showConfirmPassword;
   }
 }
-

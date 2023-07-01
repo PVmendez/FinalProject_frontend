@@ -1,22 +1,14 @@
 <form [formGroup]="myForm" (ngSubmit)="submitForm()">
-    <ion-item lines="full">
-        <ion-input placeholder="Username" formControlName="username" type="text"></ion-input>
-    </ion-item>
-    <ion-item lines="full">
-        <ion-input placeholder="Full Name" formControlName="full_name" type="text"></ion-input>
-    </ion-item>
-    <ion-item lines="full">
-        <ion-input placeholder="Email" formControlName="email" type="email"></ion-input>
-    </ion-item>
-    <ion-item lines="full">
-        <ion-input placeholder="Password" formControlName="password" [type]="showPassword ? 'text' : 'password'"
-            (ngModel)="password" name="password"></ion-input>
-        <ion-icon name="{{ showPassword ? 'eye-off' : 'eye' }}" id="toggle" (click)="togglePassword()"></ion-icon>
-    </ion-item>
-    <ion-item lines="full">
-        <ion-input placeholder="Confirm Password" formControlName="confirmPassword" [type]="showConfirmPassword ? 'text' : 'Password'"
-            (ngModel)="confirmPassword" name="confirm_password"></ion-input>
-        <ion-icon name="{{ showConfirmPassword ? 'eye-off' : 'eye' }}" id="toggleConfirm" (click)="toggleConfirmPassword()"></ion-icon>
-    </ion-item>
-    <ion-button class="button" shape="round" type="submit" color="#4E6E81">Sign Up</ion-button>
+
+    <ion-input fill="outline" placeholder="Username" formControlName="username" type="text"></ion-input>    
+    <ion-input fill="outline" placeholder="Full Name" formControlName="full_name" type="text"></ion-input>
+    <ion-input fill="outline" placeholder="Email" formControlName="email" type="email"></ion-input>
+    <ion-input fill="outline" placeholder="Password" formControlName="password"
+        [type]="showPassword ? 'text' : 'password'" (ngModel)="password" name="password"></ion-input>
+    <ion-input fill="outline" placeholder="Confirm Password" formControlName="confirmPassword"
+        [type]="showConfirmPassword ? 'text' : 'Password'" (ngModel)="confirmPassword"
+        name="confirm_password"></ion-input>
+    <ion-text id="toggle" (click)="togglePassword()">{{ showPassword ? 'Hide' : 'Show' }}</ion-text>
+    <ion-button class="button" shape="round" type="submit" color="#4E6E81" [disabled]="!myForm.valid">Sign
+        Up</ion-button>
 </form>
