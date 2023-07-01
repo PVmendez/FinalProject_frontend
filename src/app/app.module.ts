@@ -21,9 +21,12 @@ import { SignupComponent } from './signup/signup.component';
 import { SignupformComponent } from './signupform/signupform.component';
 import { LastWeekComponent } from './pages/last-week/last-week.component';
 import { ProjectsGraphComponent } from './projects-graph/projects-graph.component';
+import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
+    CalendarPageComponent,
     AppComponent,
     DashboardByVulnerabilityComponent,
     DashboardByEngineComponent,
@@ -39,9 +42,9 @@ import { ProjectsGraphComponent } from './projects-graph/projects-graph.componen
     GraphsComponent,
     VulnerabilityGraphComponent,
     UserProfileComponent,
-    ProjectsGraphComponent
+    ProjectsGraphComponent,
+    CalendarComponent
   ],
-  
   imports: [
     BrowserModule,
     AppRoutingModule,
