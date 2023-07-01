@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Project } from 'src/app/interfaces/project';
 import { DashboardService } from 'src/app/services/dashboard.service';
 import { getRiskColor } from 'src/app/helpers/riskColor';
@@ -8,12 +8,17 @@ import { getRiskColor } from 'src/app/helpers/riskColor';
   templateUrl: './dashboard-vulnerable-projects.component.html',
   styleUrls: ['./dashboard-vulnerable-projects.component.css']
 })
-export class DashboardVulnerableProjectsComponent {
+export class DashboardVulnerableProjectsComponent implements OnInit{
   projectsArray: Project[] = [];
 
   constructor(private dashboardService: DashboardService) { }
 
-  async ngOnInit() {
+  ngOnInit() {
+    this.getDatos();
+  }
+
+
+  async getDatos() {
     const projectsArray = await this.dashboardService.getMostVulnerableProjects()
     this.projectsArray = projectsArray;
   }

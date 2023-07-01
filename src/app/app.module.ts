@@ -19,6 +19,7 @@ import { VulnerabilityGraphComponent } from './vulnerability-graph/vulnerability
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignupComponent } from './signup/signup.component';
 import { SignupformComponent } from './signupform/signupform.component';
+import { LastWeekComponent } from './pages/last-week/last-week.component';
 import { ProjectsGraphComponent } from './projects-graph/projects-graph.component';
 
 @NgModule({
@@ -34,6 +35,7 @@ import { ProjectsGraphComponent } from './projects-graph/projects-graph.componen
     UserProfileComponent,
     SignupComponent,
     SignupformComponent,
+    LastWeekComponent,
     GraphsComponent,
     VulnerabilityGraphComponent,
     UserProfileComponent,

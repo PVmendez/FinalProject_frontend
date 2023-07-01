@@ -1,6 +1,6 @@
 <ion-tabs>
     <ion-tab-bar slot="bottom">
-      <ion-tab-button routerLink="/dashboard">
+      <ion-tab-button routerLink="/dashboard-vulnerable-projects">
         <ion-icon name="analytics-outline"></ion-icon>
         <ion-label>Dashboard</ion-label>
       </ion-tab-button>
@@ -10,24 +10,19 @@
         <ion-label>Calendar</ion-label>
       </ion-tab-button>
 
-      <ion-tab-button tab="tab3">
+      <ion-tab-button routerLink="/user-profile">
         <ion-icon name="person-outline"></ion-icon>
         <ion-label>Profile</ion-label>
       </ion-tab-button>
 
-      <ion-tab-button tab="tab4">
+      <ion-tab-button>
         <ion-icon name="notifications-outline"></ion-icon>
         <ion-label>Alerts</ion-label>
       </ion-tab-button>
 
-      <ion-tab-button tab="tab5">
+      <ion-tab-button routerLink="/lastWeek">
         <ion-icon name="stats-chart-outline"></ion-icon>
         <ion-label>Last Days</ion-label>
-      </ion-tab-button>
-
-      <ion-tab-button (click)="logOutUser()">
-        <ion-icon name="log-out-outline"></ion-icon>
-        <ion-label>Log out</ion-label>
       </ion-tab-button>
 
     </ion-tab-bar>
