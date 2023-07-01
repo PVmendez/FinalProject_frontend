@@ -1,7 +1,12 @@
 <ion-header class="section">
-    <h1 class="title">Log in</h1>
-    <div class="container">
-        <app-form></app-form>
-        <div class="forgot">Don't have an account? <ion-button fill="clear" routerLink="/signup">Sign Up</ion-button></div>
-    </div>
+    <ion-title class="title">Log in</ion-title>
+    <app-form></app-form>
+    <ion-grid class = "signup">
+        <ion-row class="ion-center-content">
+            <ion-text>Don't have an account?</ion-text>
+        </ion-row>
+        <ion-row>
+            <ion-button fill="clear" routerLink="/signup">Sign Up</ion-button>
+        </ion-row>
+    </ion-grid>
 </ion-header>

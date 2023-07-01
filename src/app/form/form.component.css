@@ -1,34 +1,18 @@
 body, section {
     height: 100%;
 }
-
 form {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    padding: 1.5rem;
+
  } 
-
-input{
-	width: 93%;
-	height: 100%;
-	background: rgb(246, 246, 246);
-	justify-content: center;
-	display: flex;
-	margin: 1.5rem auto;
-	padding: 1.2rem;
-	border: 1px solid;
-	outline: none;
-	border-radius: 8px;
-    border-color: rgb(234, 234, 234, 1);
-}
-
-
 .button {
     position: fixed;
-    bottom: 100px;
+    bottom: 10rem;
     width: 93%;
     border: none;
-    padding: 18px 28px;
     font-size: 16px;
     text-align: center;
     align-self: center;
@@ -36,23 +20,15 @@ input{
     color: #fff;
     border-radius: 100px;
 }
-
-.password-container {
-    position: relative;
-}
-
-#toggle {
-    position: absolute;
-    top: 50%;
-    right: 25px;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #4E6E81;
-}
-
-p {
-    margin-top: 0;
+ion-text {
     text-align: right;
     color: #4E6E81;
     padding-right: 1.5rem;
+}
+ion-item::part(native) {
+    border-color: #212020;
+    border-width: 1px;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+    padding-left: 30px;
 }

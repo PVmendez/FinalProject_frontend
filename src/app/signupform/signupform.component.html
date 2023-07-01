@@ -1,39 +1,21 @@
-<section>
-    <form [formGroup]="myForm" (ngSubmit)="submitForm()">
-        <ion-item lines="full">
-            <ion-label position="floating" >Username</ion-label>
-            <ion-input formControlName="username" type="text"></ion-input>
-        </ion-item>
-
-        <ion-item lines="full">
-            <ion-label position="floating">Full Name</ion-label>
-            <ion-input formControlName="full_name" type="text"></ion-input>
-        </ion-item>
-
-        <ion-item lines="full">
-            <ion-label position="floating">Email</ion-label>
-            <ion-input formControlName="email" type="email"></ion-input>
-        </ion-item>
-
-        <ion-item lines="full">
-            <ion-label position="floating">Password</ion-label>
-
-            <ion-input formControlName="password" [type]="showPassword ? 'text' : 'password'" (ngModel)="password"
-                name="password"></ion-input>
-            <ion-icon name="{{ showPassword ? 'eye-off' : 'eye' }}" id="toggle" (click)="togglePassword()"></ion-icon>
-
-        </ion-item>
-
-        <ion-item lines="full">
-            <ion-label position="floating">Confirm Password</ion-label>
-
-            <ion-input formControlName="password" [type]="showPassword ? 'text' : 'password'" (ngModel)="password"
-                name="confirm_password"></ion-input>
-
-
-        </ion-item>
-
-        <ion-button class="button" type="submit" color="danger" expand="block">Sign
-            Up</ion-button>
-    </form>
-</section>
+<form [formGroup]="myForm" (ngSubmit)="submitForm()">
+    <ion-item lines="full">
+        <ion-input label="Username" labelPlacement="floating" formControlName="username" type="text"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+        <ion-input label="Full Name" labelPlacement="floating" formControlName="full_name" type="text"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+        <ion-input label="Email" labelPlacement="floating" formControlName="email" type="email"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+        <ion-input label="Password" labelPlacement="floating" formControlName="password"
+            [type]="showPassword ? 'text' : 'password'" (ngModel)="password" name="password"></ion-input>
+        <ion-icon name="{{ showPassword ? 'eye-off' : 'eye' }}" id="toggle" (click)="togglePassword()"></ion-icon>
+    </ion-item>
+    <ion-item lines="full">
+        <ion-input label="Confirm Password" labelPlacement="floating" formControlName="password"
+            [type]="showPassword ? 'text' : 'password'" (ngModel)="password" name="confirm_password"></ion-input>
+    </ion-item>
+    <ion-button class="button" shape="round" type="submit">Sign Up</ion-button>
+</form>
