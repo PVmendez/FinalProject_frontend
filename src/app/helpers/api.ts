@@ -1,11 +1,12 @@
 const urlApi = 'http://localhost:3000';
 
 async function Api(url: string, method: string, token: string, body?: Object) {
+  console.log(token);
   const options: any = {
     method,
     headers: new Headers({
       'Authorization': token,
-      'Content-Type': 'application/json',
+      'Content-type': 'application/json; charset=utf-8',
     }),
   };
   if (body) {

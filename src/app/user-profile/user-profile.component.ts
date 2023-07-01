@@ -26,8 +26,8 @@ export class UserProfileComponent {
   constructor(private authService: AuthenticationService, private profileService: ProfileService) {}
 
   async ngOnInit() {
-    //const user = await this.profileService.getUser('');
-    //this.user = user;
+    const user = await this.profileService.getUser();
+    this.user = user;
   }
 
   public logOutUser(){
