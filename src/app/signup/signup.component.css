@@ -1,22 +1,36 @@
 .section {
     height: 100%;
+    background-image: url('src\assets\signup.png');
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-
 .title {
     text-align: center;
     font-size: xx-large;
     font-weight: bold;
     padding: 5%;
 }
+.signup {
 
-.forgot {
     position: fixed;
-    bottom: 65px;
-    left:20%;
-    font-weight: 600;
-    color: #4E6E81;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    border: none;
 }
-
-.forgot a {
-    color: #4E6E81;
+ion-text {
+    font-weight: 600;
+    color: #ffffff;
+}
+ion-button {
+    font-weight: 600;
+    color: #ffffff;
+}
+ion-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
 }
