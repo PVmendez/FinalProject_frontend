@@ -14,6 +14,8 @@ import { MenuComponent } from './menu/menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { SignupComponent } from './signup/signup.component';
+import { SignupformComponent } from './signupform/signupform.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     LoginComponent,
     FormComponent,
     MenuComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    SignupComponent,
+    SignupformComponent,
   ],
   imports: [
     BrowserModule,

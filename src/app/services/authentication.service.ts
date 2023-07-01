@@ -13,7 +13,7 @@ export class AuthenticationService {
 
   constructor(
     private router: Router,
-    private localStorage: LocalStorageService
+    private localStorage: LocalStorageService,
   ) {}
 
   public async loginAuth(obj: any) {
@@ -25,6 +25,17 @@ export class AuthenticationService {
         console.log(error);
       }
     });
+  }
+
+  public async signUp(obj: any) {
+    console.log("hola")
+    try {
+      const response = await Api('/register', 'POST', '', obj);
+      console.log("Sign up successful:", response);
+      return response
+    } catch (error) {
+      console.error("Error occurred during sign up:", error);
+    }
   }
 
   public logout() {
