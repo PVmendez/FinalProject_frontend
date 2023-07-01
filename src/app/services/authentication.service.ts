@@ -23,8 +23,9 @@ export class AuthenticationService {
   }
 
   public async signUp(obj: any) {
-    this.router.navigateByUrl('/login');
-    return Api('/register', 'POST', '', obj).then((response: string) => {});
+    return Api('/register', 'POST', '', obj).then((response: string) => {
+      this.router.navigateByUrl('/login');
+    });
   }
 
   public logout() {
