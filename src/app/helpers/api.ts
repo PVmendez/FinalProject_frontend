@@ -4,7 +4,7 @@ async function Api(url: string, method: string, token: string, body?: Object) {
   const options: any = {
     method,
     headers: new Headers({
-      Authorization: token,
+      'Authorization': token,
       'Content-type': 'application/json; charset=utf-8',
     }),
   };

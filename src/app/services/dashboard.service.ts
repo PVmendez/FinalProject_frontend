@@ -7,9 +7,7 @@ import { LocalStorageService } from 'angular-web-storage';
 })
 export class DashboardService {
   jwtToken = '';
-  constructor(private localStorage: LocalStorageService) {}
-
-  ngOnInit() {
+  constructor(private localStorage: LocalStorageService) {
     this.jwtToken = this.localStorage.get('token');
   }
 

@@ -5,6 +5,7 @@ import { DashboardByEngineComponent } from './pages/dashboard-by-engine/dashboar
 import { DashboardByVulnerabilityComponent } from './pages/dashboard-by-vulnerability/dashboard-by-vulnerability.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './helpers/authGuard';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,11 @@ const routes: Routes = [
   {
     path: 'dashboard-by-vulnerability',
     component: DashboardByVulnerabilityComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'user-profile',
+    component: UserProfileComponent,
     canActivate: [AuthGuard]
   }
 ];
