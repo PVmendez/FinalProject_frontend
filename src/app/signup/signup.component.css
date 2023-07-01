@@ -11,20 +11,22 @@
     font-weight: bold;
     padding: 5%;
 }
-.signup {
+.login {
 
     position: fixed;
-    bottom: 4rem;
+    bottom: 3rem;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
     border: none;
 }
 ion-text {
+    font-size:80%;
     font-weight: 600;
     color: #ffffff;
 }
 ion-button {
+    font-size:90%;
     font-weight: 600;
     color: #ffffff;
 }
