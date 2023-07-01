@@ -28,7 +28,6 @@ export class AuthenticationService {
   }
 
   public async signUp(obj: any) {
-    console.log("hola")
     try {
       const response = await Api('/register', 'POST', '', obj);
       console.log("Sign up successful:", response);
