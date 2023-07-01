@@ -1,11 +1,11 @@
 export const getRiskColor = (riskLevel: string) => {
   switch (riskLevel) {
     case 'High':
-      return 'red';
+      return '#E73520';
     case 'Medium':
-      return 'yellow';
+      return '#F6FA70';
     case 'Low':
-      return 'green';
+      return '#00B961';
     default:
       return 'black';
   }

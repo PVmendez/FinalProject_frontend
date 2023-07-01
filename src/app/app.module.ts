@@ -13,9 +13,13 @@ import { FormComponent } from './form/form.component';
 import { MenuComponent } from './menu/menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { GraphsComponent } from './graphs/graphs.component';
+import { NgApexchartsModule } from "ng-apexcharts";
+import { VulnerabilityGraphComponent } from './vulnerability-graph/vulnerability-graph.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignupComponent } from './signup/signup.component';
 import { SignupformComponent } from './signupform/signupform.component';
+import { ProjectsGraphComponent } from './projects-graph/projects-graph.component';
 
 @NgModule({
   declarations: [
@@ -30,14 +34,20 @@ import { SignupformComponent } from './signupform/signupform.component';
     UserProfileComponent,
     SignupComponent,
     SignupformComponent,
+    GraphsComponent,
+    VulnerabilityGraphComponent,
+    UserProfileComponent,
+    ProjectsGraphComponent
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
     IonicModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    NgApexchartsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
