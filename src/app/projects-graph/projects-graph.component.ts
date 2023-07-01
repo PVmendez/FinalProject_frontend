@@ -50,7 +50,7 @@ export class ProjectsGraphComponent implements OnChanges {
   ngOnChanges() {
     this.calculatetotals();
     this.chartOptions = {
-      colors: ["#f30900", "#fff50e", "#008000"],
+      colors: ["#E73520", "#F6FA70", "#00B961"],
       series: [this.highProjects, this.mediumProjects, this.lowProjects],
       chart: {
         height: 350,
