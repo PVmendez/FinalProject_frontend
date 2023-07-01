@@ -19,7 +19,8 @@ const routes: Routes = [
   },
   {
     path: 'lastWeek',
-    component: LastWeekComponent
+    component: LastWeekComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'dashboard-vulnerable-projects',
