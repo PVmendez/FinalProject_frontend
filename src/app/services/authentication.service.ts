@@ -1,4 +1,3 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { LocalStorageService } from 'angular-web-storage';
@@ -20,7 +19,7 @@ export class AuthenticationService {
     Api('/login', 'POST', '', obj).then((response: LoginResponse) => {
       try {
         this.localStorage.set('token', response.token);
-        this.router.navigate(['/dashboard-vulnerable-projects']);
+        this.router.navigateByUrl('/dashboard-vulnerable-projects');
       } catch (error) {
         console.log(error);
       }

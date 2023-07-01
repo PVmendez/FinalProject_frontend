@@ -27,6 +27,7 @@ export class FormComponent implements OnInit {
   }
 
   public submitForm(){
+
     this.loginPrv.loginAuth(this.myForm.value);
   }
 

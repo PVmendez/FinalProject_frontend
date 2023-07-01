@@ -1,14 +1,13 @@
 <section>
     <form [formGroup]="myForm" (ngSubmit)="submitForm()">
         <div>
-            <input formControlName="email" type="email" placeholder="Email"> 
+            <input class="email" formControlName="email" type="email" placeholder="Email"> 
             <div class="password-container">
                 <input formControlName="password" [type]="showPassword ? 'text' : 'password'" (ngModel)="password" name="password" placeholder="Password">
                 <span id="toggle" (click)="togglePassword()">{{ showPassword ? 'Hide' : 'Show' }}</span>
             </div>
+            <button class="button" type="submit">Log In</button>
             <p>Forgot your password?</p>
         </div>
-        
-        <button class="button" type="submit">Log In</button>
     </form>
 </section>

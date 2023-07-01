@@ -9,14 +9,13 @@
     padding: 5%;
 }
 
-.forgot {
-    position: fixed;
-    bottom: 65px;
-    left:20%;
+.signUp {
+    bottom: 30%;
+    text-align: center;
     font-weight: 600;
     color: #4E6E81;
 }
 
-.forgot a {
+.signUp a {
     color: #4E6E81;
 }
