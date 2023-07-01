@@ -15,14 +15,14 @@ export class SignupformComponent implements OnInit {
     full_name: new FormControl(),
   });
 
-
   password!: string;
+  confirmPassword!: string;
   showPassword: boolean = false;
+  showConfirmPassword: boolean = false;
 
   constructor(private fb: FormBuilder, private signUpPrv: AuthenticationService) { }
 
   ngOnInit(): void {}
-
 
   public submitForm() {
     this.signUpPrv.signUp(this.myForm.value);
@@ -30,6 +30,10 @@ export class SignupformComponent implements OnInit {
 
   togglePassword() {
     this.showPassword = !this.showPassword;
+  }
+  
+  toggleConfirmPassword() {
+    this.showConfirmPassword = !this.showConfirmPassword
   }
 }
 

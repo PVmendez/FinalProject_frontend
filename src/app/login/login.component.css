@@ -1,29 +1,26 @@
 .section {
     height: 100%;
     background-image: url('src\assets\login.png');
+    opacity: 0.8;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 .title {
     text-align: center;
     font-size: xx-large;
     font-weight: bold;
-    padding: 5%;
-}
-.signup {
-
-    position: fixed;
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    border: none;
 }
 ion-text {
     font-size:80%;
     font-weight: 600;
     color: #ffffff;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }
 ion-button {
     font-size:100%;
