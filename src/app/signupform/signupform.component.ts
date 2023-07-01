@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from '../services/authentication.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-signupform',
@@ -9,10 +10,12 @@ import { AuthenticationService } from '../services/authentication.service';
 })
 export class SignupformComponent implements OnInit {
   public myForm: FormGroup = this.fb.group({
-    email: new FormControl(),
-    password: new FormControl(),
     username: new FormControl(),
     full_name: new FormControl(),
+    email: new FormControl(),
+    password: new FormControl(),
+    confirmPassword: new FormControl(),
+
   });
 
   password!: string;
@@ -20,12 +23,34 @@ export class SignupformComponent implements OnInit {
   showPassword: boolean = false;
   showConfirmPassword: boolean = false;
 
-  constructor(private fb: FormBuilder, private signUpPrv: AuthenticationService) { }
+  constructor(private fb: FormBuilder, private signUpPrv: AuthenticationService,private toastController: ToastController) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.myForm = this.fb.group({
+      username: ['', Validators.required],
+      full_name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]],
+      confirmPassword: ['', Validators.required],
+    }, { validator: this.passwordMatchValidator });
+  }
+  passwordMatchValidator(form: FormGroup) {
+    const password = form.get('password')?.value;
+    const confirmPassword = form.get('confirmPassword')?.value;
+
+    if (password !== confirmPassword) {
+      form.get('confirmPassword')?.setErrors({ passwordMismatch: true });
+    } else {
+      form.get('confirmPassword')?.setErrors(null);
+    }
+  }
 
   public submitForm() {
-    this.signUpPrv.signUp(this.myForm.value);
+    if (this.myForm.valid) {
+      this.signUpPrv.signUp(this.myForm.value);
+    } else {
+      this.showErrorMessage('Passwords do not match');
+    }
   }
 
   togglePassword() {
@@ -34,6 +59,17 @@ export class SignupformComponent implements OnInit {
   
   toggleConfirmPassword() {
     this.showConfirmPassword = !this.showConfirmPassword
+  }
+
+  async showErrorMessage(errorMessage: string) {
+    const toast = await this.toastController.create({
+      message: errorMessage,
+      duration: 3000,
+      color: 'danger',
+      position: 'top'
+    });
+  
+    toast.present();
   }
 }
 
