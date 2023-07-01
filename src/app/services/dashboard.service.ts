@@ -7,22 +7,36 @@ import { LocalStorageService } from 'angular-web-storage';
 })
 export class DashboardService {
   jwtToken = '';
-  constructor(private localStorage: LocalStorageService) {
-    this.jwtToken = this.localStorage.get('token');
-  }
 
-  async getEngines() {
-    const response = await Api('/engines', 'GET', this.jwtToken);
+  constructor(private localStorage: LocalStorageService) { this.jwtToken = this.localStorage.get('token'); }
+
+  async getEngines(filterByDate = null) {
+    let uri = '/engines';
+
+    if (filterByDate) { uri += `?filterByDate=${filterByDate}` }
+  
+    const response = Api(uri, 'GET', this.jwtToken);
+
     return response;
   }
 
-  async getMostVulnerableProjects() {
-    const response = await Api('/projects', 'GET', this.jwtToken);
+  async getMostVulnerableProjects(filterByDate = null) {
+    let uri = '/projects';
+
+    if (filterByDate) { uri += `?filterByDate=${filterByDate}` }
+
+    const response = Api(uri, 'GET', this.jwtToken);
+
     return response;
   }
 
-  async getVulnerabilities() {
-    const response = await Api('/vulnerabilities', 'GET', this.jwtToken);
+  async getVulnerabilities(filterByDate = null) {
+    let uri = '/vulnerabilities';
+
+    if (filterByDate) { uri += `?filterByDate=${filterByDate}` }
+
+    const response = Api(uri, 'GET', this.jwtToken);
+
     return response;
   }
 }
