@@ -13,27 +13,18 @@ export class AuthenticationService {
   constructor(
     private router: Router,
     private localStorage: LocalStorageService,
-  ) {}
+  ) { }
 
   public async loginAuth(obj: any) {
-    Api('/login', 'POST', '', obj).then((response: LoginResponse) => {
-      try {
+    return Api('/login', 'POST', '', obj).then((response: LoginResponse) => {
         this.localStorage.set('token', response.token);
         this.router.navigateByUrl('/dashboard-vulnerable-projects');
-      } catch (error) {
-        console.log(error);
-      }
     });
   }
 
   public async signUp(obj: any) {
-    try {
-      const response = await Api('/register', 'POST', '', obj);
-      console.log("Sign up successful:", response);
-      return response
-    } catch (error) {
-      console.error("Error occurred during sign up:", error);
-    }
+    this.router.navigateByUrl('/login');
+    return Api('/register', 'POST', '', obj).then((response: string) => {});
   }
 
   public logout() {

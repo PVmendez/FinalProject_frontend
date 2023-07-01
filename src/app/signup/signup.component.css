@@ -1,7 +1,6 @@
 .section {
     height: 100%;
-    background-image: url('src\assets\signup.png');
-    opacity: 0.9;
+    background-color: #5694D4;
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -11,6 +10,7 @@
     align-items: center;
 }
 h1 {
+    color: #FFFF;
     text-align: center;
     font-size: xx-large;
     font-weight: bold;

@@ -2,10 +2,13 @@ body, section {
     height: 100%;
 }
 form {
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding: 1.5rem;
+    padding: 0.7rem;
+    border-radius: 10px;
+    box-shadow: 8px 10px 18px #0c1137;
  } 
 .button {
     border: none;
@@ -13,21 +16,15 @@ form {
     background-color: #4E6E81;
     color: #fff;
     border-radius: 100px;
+    display: block;
+    margin-top: 0.5rem;
+    width: 20rem;
+}
+ion-input {
+    margin: 0.5rem 0 0.5rem 0;
 }
 ion-text {
     text-align: right;
     color: #4E6E81;
     padding-right: 1.5rem;
-}
-ion-item::part(native) {
-    border-color: #212020;
-    border-width: 1px;
-    border-radius: 100px;
-    margin-bottom: 1rem;
-    padding-left: 30px;
-}
-ion-item, .button {
-    display: block;
-    margin: 0 auto;
-    width: 20rem;
 }

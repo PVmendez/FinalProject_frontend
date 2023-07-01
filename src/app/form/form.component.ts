@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthenticationService } from '../services/authentication.service';
+import { MessagesService } from '../services/messages.service';
 
 @Component({
   selector: 'app-form',
@@ -13,7 +14,7 @@ export class FormComponent implements OnInit {
   password!: string;
   showPassword: boolean = false;
 
-  constructor(private fb: FormBuilder, private loginPrv: AuthenticationService){}
+  constructor(private fb: FormBuilder, private loginPrv: AuthenticationService, private messageService: MessagesService){}
 
   ngOnInit(): void {
     this.myForm = this.createMyForm();
@@ -27,8 +28,9 @@ export class FormComponent implements OnInit {
   }
 
   public submitForm(){
-
-    this.loginPrv.loginAuth(this.myForm.value);
+    this.loginPrv.loginAuth(this.myForm.value).catch( err => {
+      this.messageService.showMessage("Email or password invalid", 'danger')
+    });
   }
 
   togglePassword() {
