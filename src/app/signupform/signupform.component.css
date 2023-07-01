@@ -1,5 +1,4 @@
-body,
-section {
+body, section {
     height: 100%;
 }
 form {
@@ -8,26 +7,17 @@ form {
     justify-content: space-evenly;
     padding: 1.5rem;
  } 
- .button {
-    width: 20rem;
+.button {
     border: none;
     font-size: 16px;
     background-color: #4E6E81;
     color: #fff;
     border-radius: 100px;
 }
-
-.email, .password {
-    display: block;
-    margin: 0 auto;
-    width: 20rem;
-}
 ion-text {
-    margin-top: 1rem;
     text-align: right;
+    color: #4E6E81;
     padding-right: 1.5rem;
-    color: #1f1f1f;
-    font-weight: bold;
 }
 ion-item::part(native) {
     border-color: #212020;
@@ -36,9 +26,8 @@ ion-item::part(native) {
     margin-bottom: 1rem;
     padding-left: 30px;
 }
-
-@media screen and (min-width: 400px) {
-    ion-text {
-        text-align: center;
-    }
+ion-item, .button {
+    display: block;
+    margin: 0 auto;
+    width: 20rem;
 }

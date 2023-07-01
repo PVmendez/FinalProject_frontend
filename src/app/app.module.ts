@@ -17,6 +17,8 @@ import { GraphsComponent } from './graphs/graphs.component';
 import { NgApexchartsModule } from "ng-apexcharts";
 import { VulnerabilityGraphComponent } from './vulnerability-graph/vulnerability-graph.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { SignupComponent } from './signup/signup.component';
+import { SignupformComponent } from './signupform/signupform.component';
 import { LastWeekComponent } from './pages/last-week/last-week.component';
 import { ProjectsGraphComponent } from './projects-graph/projects-graph.component';
 
@@ -31,7 +33,9 @@ import { ProjectsGraphComponent } from './projects-graph/projects-graph.componen
     FormComponent,
     MenuComponent,
     UserProfileComponent,
-    LastWeekComponent
+    SignupComponent,
+    SignupformComponent,
+    LastWeekComponent,
     GraphsComponent,
     VulnerabilityGraphComponent,
     UserProfileComponent,
