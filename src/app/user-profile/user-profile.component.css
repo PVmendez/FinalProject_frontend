@@ -107,21 +107,21 @@ h2 {
 
 .segment-button.active:nth-child(1) {
   color: #fff;
-  background-color: red;
+  background-color: #E73520;
 }
 
 .segment-button.active:nth-child(2) {
   color: #fff;
-  background-color: yellow;
+  background-color: #F6FA70;
 }
 
 .segment-button.active:nth-child(3) {
   color: #fff;
-  background-color: green;
+  background-color: #00B961;
 }
 
 .news-container {
-  height: 200px;
+  height: 500px;
   overflow-y: auto;
 }
 
@@ -164,9 +164,18 @@ h2 {
 
   .news-container {
     padding: 0 120px 0 120px;
+    height: 500px;
+    overflow-y: auto;
   }
 
   .news {
     border-radius: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .news-container {
+    height: 500px;
+    overflow-y: auto;
   }
 }
