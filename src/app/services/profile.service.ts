@@ -1,17 +1,20 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import Api from '../helpers/api';
+import { LocalStorageService } from 'angular-web-storage';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProfileService {
+  jwtToken = '';
+  constructor(private http: HttpClient, private router: Router, private localStorage: LocalStorageService) {
+    this.jwtToken = this.localStorage.get('token');
+  }
 
-  constructor(private http: HttpClient, private router: Router) {}
-
-  public async getUser (obj: any) {
-      const data = await fetch('http://localhost:3000/user', obj);
-      const response = await data.json();
-      return response;
+  async getUser() {
+    const response = Api('/profile', 'GET', this.jwtToken);
+    return response;
   }
 }
