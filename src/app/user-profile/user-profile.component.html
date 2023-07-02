@@ -2,7 +2,7 @@
   <div class="user-profile-container">
     <div class="buttons">
       <ion-buttons class="setting">
-        <ion-button (click)="logOutUser()">
+        <ion-button (click)="settingsRouter()">
           <ion-icon name="settings"></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -10,7 +10,7 @@
         <ion-button (click)="logOutUser()">Logout</ion-button>
       </ion-buttons>
     </div>
-    <img [src]='user.photo === undefined ? "../../assets/default.jpg": user.photo' class="profile-image" />
+    <img [src]='user.photo ?? "../../assets/default.jpg"' class="profile-image" />
     <div class="titles">
       <ion-title class="user-title">{{ user.full_name }}</ion-title>
       <ion-title class="user-subtitle">{{ user.username }}</ion-title>

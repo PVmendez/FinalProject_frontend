@@ -15,4 +15,9 @@ export class ProfileService {
     const response = Api('/user', 'GET', this.jwtToken);
     return response;
   }
+
+  async updateUser(obj: any) {
+    const response = Api('/update', 'PATCH', this.jwtToken, obj);
+    return response;
+  }
 }
