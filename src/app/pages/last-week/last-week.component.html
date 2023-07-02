@@ -1,13 +1,13 @@
 <ion-content>
     <h1>Last 7 Days</h1> 
     <ion-item-group>
-        <ion-item *ngFor="let day of lastWeekVulnerabilities">
+        <ion-item>
             <ion-row>
                 <div class="Days">
                     <ion-icon aria-hidden="true" name="ellipse"></ion-icon>
-                    <ion-col>{{day.day}}</ion-col>
+                    <!-- <ion-col>{{day.day}}</ion-col> -->
                 </div>
-                <ion-col class="Vulnerability">{{day.total}}</ion-col>
+                <!-- <ion-col class="Vulnerability">{{day.total}}</ion-col> -->
             </ion-row>
         </ion-item>
     </ion-item-group>
