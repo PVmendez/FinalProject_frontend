@@ -1,11 +1,11 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { ApexResponsive } from 'ng-apexcharts';
 import { Engine } from 'src/app/interfaces/engine';
 
 import {
   ApexNonAxisChartSeries,
   ApexPlotOptions,
   ApexChart,
+  ApexResponsive,
 } from 'ng-apexcharts';
 
 export type ChartOptions = {
@@ -66,18 +66,20 @@ export class GraphsComponent implements OnInit, OnChanges {
       ],
     };
   }
-  
-  ngOnChanges() {
-      let total: number;
-      total = this.engine.SAST + this.engine.SCA + this.engine.IaC;
 
-      this.chartOptions = {...this.chartOptions, ...{
+  ngOnChanges() {
+    let total: number;
+    total = this.engine.SAST + this.engine.SCA + this.engine.IaC;
+
+    this.chartOptions = {
+      ...this.chartOptions,
+      ...{
         series: [
           (this.engine.SAST * 100) / total,
           (this.engine.SCA * 100) / total,
           (this.engine.IaC * 100) / total,
-        ]
-      }
-    }
+        ],
+      },
+    };
   }
 }
