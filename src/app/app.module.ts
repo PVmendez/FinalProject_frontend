@@ -21,6 +21,7 @@ import { SignupComponent } from './signup/signup.component';
 import { SignupformComponent } from './signupform/signupform.component';
 import { LastWeekComponent } from './pages/last-week/last-week.component';
 import { ProjectsGraphComponent } from './projects-graph/projects-graph.component';
+import { LastWeekGraphComponent } from './last-week-graph/last-week-graph.component';
 import { SettingComponent } from './pages/settings/settings.component';
 import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
 import { CalendarComponent } from './calendar/calendar.component';
@@ -44,6 +45,7 @@ import { CalendarComponent } from './calendar/calendar.component';
     VulnerabilityGraphComponent,
     UserProfileComponent,
     ProjectsGraphComponent,
+    LastWeekGraphComponent
     SettingComponent
     CalendarComponent
   ],

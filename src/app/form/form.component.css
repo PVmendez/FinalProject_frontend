@@ -11,9 +11,10 @@ form {
 .button {
     border: none;
     font-size: 16px;
-    background-color: #4E6E81;
-    color: #fff;
+    background-color: #fff;
+    color: #000000;
     border-radius: 100px;
+    margin-top: 20px!important;
 }
 .email, .password, .button {
     display: block;
@@ -38,4 +39,8 @@ ion-item::part(native) {
     ion-text {
         text-align: center;
     }
+}
+
+.p-24 {
+    padding: 24px;
 }
