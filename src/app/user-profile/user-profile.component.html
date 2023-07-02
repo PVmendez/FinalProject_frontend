@@ -1,103 +1,42 @@
-<div class="header">
-  <header>
-    <h2>Settings</h2>
-    <h1>Profile</h1>
-    <h2 (click)="logOutUser()">Logout</h2>
-  </header>
-  <div class="profile-image-container">
-    <img [src]="user.photo" alt="Imagen de perfil" class="profile-image" />
-  </div>
-</div>
-<div class="user-profile-container">
-  <div class="titles">
-    <h1 class="title user-title">{{ user.full_name }}</h1>
-    <h4 class="title user-subtitle">{{ user.username }}</h4>
+<ion-content>
+  <div class="user-profile-container">
+    <div class="buttons">
+      <ion-buttons class="setting">
+        <ion-button (click)="logOutUser()">
+          <ion-icon name="settings"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button (click)="logOutUser()">Logout</ion-button>
+      </ion-buttons>
+    </div>
+    <img [src]="user1.photo" alt="Imagen de perfil" class="profile-image" />
+    <div class="titles">
+      <ion-title class="user-title">{{ user1.full_name }}</ion-title>
+      <ion-title class="user-subtitle">{{ user1.username }}</ion-title>
+    </div>
   </div>
   <div class="segment-control">
-    <button
-      class="segment-button"
-      [class.active]="selectedSegment === 'segment1'"
-      (click)="selectSegment('segment1')"
-    >
-      High
-    </button>
-    <button
-      class="segment-button"
-      [class.active]="selectedSegment === 'segment2'"
-      (click)="selectSegment('segment2')"
-    >
-      Medium
-    </button>
-    <button
-      class="segment-button"
-      [class.active]="selectedSegment === 'segment3'"
-      (click)="selectSegment('segment3')"
-    >
-      Low
-    </button>
+    <ion-segment [(ngModel)]="selectedSegment">
+      <ion-segment-button value="segment1">
+        <ion-label>High</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="segment2">
+        <ion-label>Medium</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="segment3">
+        <ion-label>Low</ion-label>
+      </ion-segment-button>
+    </ion-segment>
   </div>
   <div class="news-container">
-    <div class="news">
-      <img class="image" [src]="user.photo" alt="News Image">
+    <div class="news" *ngFor="let newca of news">
+      <img class="image" [src]="newca.user.photo" alt="News Image" />
       <div>
-        <div class="author">{{ user.username }}</div>
-        <div class="content">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-        <div class="timestamp">Posted on June 28, 2023</div>
-      </div>
-    </div>
-
-    <div class="news">
-      <img class="image" [src]="user.photo" alt="News Image">
-      <div>
-        <div class="author">{{ user.username }}</div>
-        <div class="content">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-        <div class="timestamp">Posted on June 28, 2023</div>
-      </div>
-    </div>
-
-    <div class="news">
-      <img class="image" [src]="user.photo" alt="News Image">
-      <div>
-        <div class="author">{{ user.username }}</div>
-        <div class="content">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-        <div class="timestamp">Posted on June 28, 2023</div>
-      </div>
-    </div>
-
-    <div class="news">
-      <img class="image" [src]="user.photo" alt="News Image">
-      <div>
-        <div class="author">{{ user.username }}</div>
-        <div class="content">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-        <div class="timestamp">Posted on June 28, 2023</div>
-      </div>
-    </div>
-
-    <div class="news">
-      <img class="image" [src]="user.photo" alt="News Image">
-      <div>
-        <div class="author">{{ user.username }}</div>
-        <div class="content">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-        <div class="timestamp">Posted on June 28, 2023</div>
-      </div>
-    </div>
-
-    <div class="news">
-      <img class="image" [src]="user.photo" alt="News Image">
-      <div>
-        <div class="author">{{ user.username }}</div>
-        <div class="content">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-        <div class="timestamp">Posted on June 28, 2023</div>
-      </div>
-    </div>
-
-    <div class="news">
-      <img class="image" [src]="user.photo" alt="News Image">
-      <div>
-        <div class="author">{{ user.username }}</div>
-        <div class="content">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-        <div class="timestamp">Posted on June 28, 2023</div>
+        <div class="author">{{ newca.user.username }}</div>
+        <div class="content">{{newca.description}}</div>
+        <div class="timestamp">{{newca.date}}</div>
       </div>
     </div>
   </div>
-</div>
+</ion-content>
