@@ -8,6 +8,8 @@ import { LastWeekComponent } from './pages/last-week/last-week.component';
 import { AuthGuard } from './helpers/authGuard';
 import { SignupComponent } from './signup/signup.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { SettingComponent } from './pages/settings/settings.component';
+import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
 
 const routes: Routes = [
   {
@@ -46,6 +48,16 @@ const routes: Routes = [
   {
     path: 'user-profile',
     component: UserProfileComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'settings',
+    component: SettingComponent,
+     canActivate: [AuthGuard]
+  },
+  {
+    path: 'calendar',
+    component: CalendarPageComponent,
     canActivate: [AuthGuard]
   }
 ];

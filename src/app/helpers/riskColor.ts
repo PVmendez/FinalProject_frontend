@@ -1,12 +1,16 @@
 export const getRiskColor = (riskLevel: string) => {
-  switch (riskLevel) {
-    case 'High':
-      return '#E73520';
-    case 'Medium':
-      return '#F6FA70';
-    case 'Low':
-      return '#00B961';
-    default:
-      return 'black';
+  const colorMap: { [key: string]: string } = {
+    High: '#E73520',
+    Medium: '#F6FA70',
+    Low: '#00B961',
+  };
+
+  if (riskLevel in colorMap) {
+    return colorMap[riskLevel];
   }
-}
+
+  return '#CCCCCC';
+};
+
+
+
