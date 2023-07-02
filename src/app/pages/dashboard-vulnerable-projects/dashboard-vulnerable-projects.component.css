@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 
-h1 {
+h2 {
   font-family: Inter;
   font-style: normal;
   font-weight: 600;
@@ -8,25 +8,25 @@ h1 {
   line-height: normal;
   color: #4E6E81;
   text-align: center;
-  }
+}
+
 ion-row {
   width: 100%;
 }
+
 ion-col {
   white-space: nowrap;
 }
+
 ion-icon {
   margin-right: 1pc;
 }
+
 .Vulnerability {
   text-align: end;
 }
+
 .Projects {
   margin: auto;
 }
-.title {
-  font-size: 24px;
-  font-family: Inter;
-  font-style: normal;
-  line-height: normal;
-}
+
