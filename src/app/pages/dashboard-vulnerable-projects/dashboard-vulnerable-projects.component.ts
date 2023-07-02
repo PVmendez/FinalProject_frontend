@@ -17,7 +17,6 @@ export class DashboardVulnerableProjectsComponent implements OnInit{
     this.getDatos();
   }
 
-
   async getDatos() {
     const projectsArray = await this.dashboardService.getMostVulnerableProjects()
     this.projectsArray = projectsArray;
