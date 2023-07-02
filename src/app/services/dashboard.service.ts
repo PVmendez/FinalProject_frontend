@@ -12,17 +12,17 @@ export class DashboardService {
   }
 
   async getEngines() {
-    const response = Api('/engines', 'GET', this.jwtToken);
+    const response = await Api('/engines', 'GET', this.jwtToken);
     return response;
   }
 
   async getMostVulnerableProjects() {
-    const response = Api('/projects', 'GET', this.jwtToken);
+    const response = await Api('/projects', 'GET', this.jwtToken);
     return response;
   }
 
   async getVulnerabilities() {
-    const response = Api('/vulnerabilities', 'GET', this.jwtToken);
+    const response = await Api('/vulnerabilities', 'GET', this.jwtToken);
     return response;
   }
 }
