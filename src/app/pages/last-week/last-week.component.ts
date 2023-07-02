@@ -7,8 +7,9 @@ import { LastWeekService } from 'src/app/services/last-week.service';
   templateUrl: './last-week.component.html',
   styleUrls: ['./last-week.component.css']
 })
-export class LastWeekComponent implements OnInit {
-  weekArray = {};
+export class LastWeekComponent implements OnInit{
+  weekArray: Week = {};
+  weekDays: string[] = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
   constructor(private lastWeekService: LastWeekService) {}
 
@@ -17,7 +18,7 @@ export class LastWeekComponent implements OnInit {
   }
 
   async getDatos() {
-    const weekArray = await this.lastWeekService.getThisWeekVulnerabilities();
-    return weekArray;
+    this.weekArray = await this.lastWeekService.getThisWeekVulnerabilities();
+    return this.weekArray;
   }
 }
