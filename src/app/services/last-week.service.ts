@@ -8,17 +8,7 @@ import Api from '../helpers/api';
 })
 export class LastWeekService {
 
-  // testArray: DayVulnerabilities[] = [
-  //   {day: "Monday",total: 42},
-  //   {day: "Tuesday", total: 25},
-  //   {day: "Wednesday", total: 13},
-  //   {day: "Thursday", total: 50},
-  //   {day: "Friday", total: 66},
-  //   {day: "Saturday", total: 1},
-  //   {day: "Sunday", total: 0}
-  // ]
-
-    jwtToken = '';
+  jwtToken = '';
   constructor(private localStorage: LocalStorageService) {
     this.jwtToken = this.localStorage.get('token');
   }
