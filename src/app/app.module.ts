@@ -45,8 +45,8 @@ import { CalendarComponent } from './calendar/calendar.component';
     VulnerabilityGraphComponent,
     UserProfileComponent,
     ProjectsGraphComponent,
-    LastWeekGraphComponent
-    SettingComponent
+    LastWeekGraphComponent,
+    SettingComponent,
     CalendarComponent
   ],
   imports: [
