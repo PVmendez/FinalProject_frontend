@@ -1,14 +1,15 @@
 <h1>Dashboard</h1>
+
 <ion-toolbar>
     <ion-tabs>
         <ion-tab-bar>
-            <ion-tab-button routerLink="/dashboard-vulnerable-projects">
+            <ion-tab-button routerLink="/dashboard-vulnerable-projects" [queryParams]="filterByDate ? { filterByDate: filterByDate } : null">
                 Most Vulnerable Projects
             </ion-tab-button>
-            <ion-tab-button routerLink="/dashboard-by-vulnerability">
+            <ion-tab-button routerLink="/dashboard-by-vulnerability" [queryParams]="filterByDate ? { filterByDate: filterByDate } : null">
                 Results By Vulnerability
             </ion-tab-button>
-            <ion-tab-button routerLink="/dashboard-by-engine">
+            <ion-tab-button routerLink="/dashboard-by-engine" [queryParams]="filterByDate ? { filterByDate: filterByDate } : null">
                 Results By Engine
             </ion-tab-button>
         </ion-tab-bar>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Engine } from 'src/app/interfaces/engine';
 import { DashboardService } from 'src/app/services/dashboard.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-by-engine',
@@ -14,10 +15,14 @@ export class DashboardByEngineComponent implements OnInit {
     IaC: 0,
   };
 
-  constructor(private dashboardService: DashboardService) { }
+  date: string = '';
+
+  constructor(private dashboardService: DashboardService, private route: ActivatedRoute) { }
 
   async ngOnInit() {
-    const enginesArray = await this.dashboardService.getEngines()
-    this.engines = enginesArray;
+    this.route.queryParams.subscribe(async params => {
+      this.date = params['filterByDate'];
+      this.engines = await this.dashboardService.getEngines(params['filterByDate'])
+    });
   }
 }
