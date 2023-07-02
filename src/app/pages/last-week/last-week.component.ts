@@ -19,7 +19,6 @@ export class LastWeekComponent implements OnInit{
 
   async getData() {
     this.weekArray = await this.lastWeekService.getThisWeekVulnerabilities();
-    console.log(this.weekArray);
     return this.weekArray;
   }
 }
