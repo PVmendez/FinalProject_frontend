@@ -10,7 +10,6 @@
         <ion-button (click)="logOutUser()">Logout</ion-button>
       </ion-buttons>
     </div>
-    <!-- <img src="..\..\assets\default.jpg" alt="Imagen de perfil" class="profile-image"> -->
     <img [src]='user.photo === undefined ? "../../assets/default.jpg": user.photo' class="profile-image" />
     <div class="titles">
       <ion-title class="user-title">{{ user.full_name }}</ion-title>
