@@ -14,7 +14,7 @@ export class ProfileService {
   }
 
   async getUser() {
-    const response = Api('/profile', 'GET', this.jwtToken);
+    const response = Api('/user', 'GET', this.jwtToken);
     return response;
   }
 }
