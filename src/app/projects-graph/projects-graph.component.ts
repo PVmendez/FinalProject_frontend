@@ -53,7 +53,7 @@ export class ProjectsGraphComponent implements OnChanges {
       colors: ["#E73520", "#F6FA70", "#00B961"],
       series: [this.highProjects, this.mediumProjects, this.lowProjects],
       chart: {
-        height: 350,
+        height: 300,
         animations: {
           enabled: true
         },
