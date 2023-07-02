@@ -1,103 +1,31 @@
-<div class="header">
-  <header>
-    <h2>Settings</h2>
-    <h1>Profile</h1>
-    <h2 (click)="logOutUser()">Logout</h2>
-  </header>
-  <div class="profile-image-container">
-    <img [src]="user.photo" alt="Imagen de perfil" class="profile-image" />
+<ion-content>
+  <div class="user-profile-container">
+    <div class="buttons">
+      <ion-buttons class="setting">
+        <ion-button (click)="logOutUser()">
+          <ion-icon name="settings"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button (click)="logOutUser()">Logout</ion-button>
+      </ion-buttons>
+    </div>
+    <img [src]='user.photo === undefined ? "../../assets/default.jpg": user.photo' class="profile-image" />
+    <div class="titles">
+      <ion-title class="user-title">{{ user.full_name }}</ion-title>
+      <ion-title class="user-subtitle">{{ user.username }}</ion-title>
+    </div>
   </div>
-</div>
-<div class="user-profile-container">
-  <div class="titles">
-    <h1 class="title user-title">{{ user.full_name }}</h1>
-    <h4 class="title user-subtitle">{{ user.username }}</h4>
-  </div>
-  <div class="segment-control">
-    <button
-      class="segment-button"
-      [class.active]="selectedSegment === 'segment1'"
-      (click)="selectSegment('segment1')"
-    >
-      High
-    </button>
-    <button
-      class="segment-button"
-      [class.active]="selectedSegment === 'segment2'"
-      (click)="selectSegment('segment2')"
-    >
-      Medium
-    </button>
-    <button
-      class="segment-button"
-      [class.active]="selectedSegment === 'segment3'"
-      (click)="selectSegment('segment3')"
-    >
-      Low
-    </button>
-  </div>
+
   <div class="news-container">
-    <div class="news">
-      <img class="image" [src]="user.photo" alt="News Image">
-      <div>
-        <div class="author">{{ user.username }}</div>
-        <div class="content">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-        <div class="timestamp">Posted on June 28, 2023</div>
-      </div>
-    </div>
-
-    <div class="news">
-      <img class="image" [src]="user.photo" alt="News Image">
-      <div>
-        <div class="author">{{ user.username }}</div>
-        <div class="content">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-        <div class="timestamp">Posted on June 28, 2023</div>
-      </div>
-    </div>
-
-    <div class="news">
-      <img class="image" [src]="user.photo" alt="News Image">
-      <div>
-        <div class="author">{{ user.username }}</div>
-        <div class="content">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-        <div class="timestamp">Posted on June 28, 2023</div>
-      </div>
-    </div>
-
-    <div class="news">
-      <img class="image" [src]="user.photo" alt="News Image">
-      <div>
-        <div class="author">{{ user.username }}</div>
-        <div class="content">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-        <div class="timestamp">Posted on June 28, 2023</div>
-      </div>
-    </div>
-
-    <div class="news">
-      <img class="image" [src]="user.photo" alt="News Image">
-      <div>
-        <div class="author">{{ user.username }}</div>
-        <div class="content">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-        <div class="timestamp">Posted on June 28, 2023</div>
-      </div>
-    </div>
-
-    <div class="news">
-      <img class="image" [src]="user.photo" alt="News Image">
-      <div>
-        <div class="author">{{ user.username }}</div>
-        <div class="content">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-        <div class="timestamp">Posted on June 28, 2023</div>
-      </div>
-    </div>
-
-    <div class="news">
-      <img class="image" [src]="user.photo" alt="News Image">
-      <div>
-        <div class="author">{{ user.username }}</div>
-        <div class="content">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</div>
-        <div class="timestamp">Posted on June 28, 2023</div>
+    <div class="news" *ngFor="let notification of notifications">
+      <ion-icon name="alert-circle-outline"
+        [style]="notification.risk_level === 'High' ? 'color: red': 'color: yellow'"></ion-icon>
+      <div class="notification">
+        <div class="projectName">{{ notification.project_name }}</div>
+        <div class="content">Level of vulnerability {{notification.risk_level}}: {{notification.risk_level === "High" ? notification.levels.high: notification.levels.medium}}</div>
+        <div class="timestamp">{{notification.date}}</div>
       </div>
     </div>
   </div>
-</div>
+</ion-content>
