@@ -13,19 +13,20 @@ export class AuthenticationService {
   constructor(
     private router: Router,
     private localStorage: LocalStorageService,
-  ) { }
+  ) {}
 
   public async loginAuth(obj: any) {
-    return Api('/login', 'POST', '', obj).then((response: LoginResponse) => {
-        this.localStorage.set('token', response.token);
-        this.router.navigateByUrl('/dashboard-vulnerable-projects');
-    });
+    const response: LoginResponse = await Api('/login', 'POST', '', obj);
+    this.localStorage.set('token', response.token);
+    this.router.navigateByUrl('/dashboard-vulnerable-projects');
+    return response;
   }
 
   public async signUp(obj: any) {
-    return Api('/register', 'POST', '', obj).then((response: string) => {
-      this.router.navigateByUrl('/login');
-    });
+    const response = await Api('/register', 'POST', '', obj);
+    this.router.navigateByUrl('/login');
+
+    return response;
   }
 
   public logout() {
