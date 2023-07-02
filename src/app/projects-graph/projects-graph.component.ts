@@ -1,13 +1,11 @@
-import { Component, Inject, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from "@angular/core";
-import { ApexStroke, ChartComponent } from "ng-apexcharts";
-import { Project } from "../interfaces/project";
-
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Project } from '../interfaces/project';
 
 import {
   ApexNonAxisChartSeries,
   ApexResponsive,
-  ApexChart
-} from "ng-apexcharts";
+  ApexChart,
+} from 'ng-apexcharts';
 
 export type ChartOptions = {
   series: ApexNonAxisChartSeries;
@@ -20,60 +18,65 @@ export type ChartOptions = {
 @Component({
   selector: 'app-projects-graph',
   templateUrl: './projects-graph.component.html',
-  styleUrls: ['./projects-graph.component.css']
+  styleUrls: ['./projects-graph.component.css'],
 })
-export class ProjectsGraphComponent implements OnChanges {
+export class ProjectsGraphComponent implements OnInit, OnChanges {
   public chartOptions!: ChartOptions;
-  @Input()projects!: Project[];
+  @Input() projects!: Project[];
 
-  constructor () {
-  }
+  constructor() {}
 
-  highProjects : number = 0;
-  mediumProjects : number = 0;
-  lowProjects : number = 0;
+  highProjects: number = 0;
+  mediumProjects: number = 0;
+  lowProjects: number = 0;
 
   calculatetotals() {
     for (let index = 0; index < this.projects.length; index++) {
-      if (this.projects[index].risk_level === 'High'){
+      if (this.projects[index].risk_level === 'High') {
         this.highProjects += 1;
-      }
-      else if (this.projects[index].risk_level === 'Medium'){
+      } else if (this.projects[index].risk_level === 'Medium') {
         this.mediumProjects += 1;
-      }
-      else if (this.projects[index].risk_level === 'Low'){
+      } else if (this.projects[index].risk_level === 'Low') {
         this.lowProjects += 1;
       }
     }
   }
 
-  ngOnChanges() {
-    this.calculatetotals();
+  ngOnInit() {
     this.chartOptions = {
-      colors: ["#E73520", "#F6FA70", "#00B961"],
-      series: [this.highProjects, this.mediumProjects, this.lowProjects],
+      colors: ['#E73520', '#F6FA70', '#00B961'],
+      series: [],
       chart: {
-        height: 350,
+        height: 300,
         animations: {
-          enabled: true
+          enabled: true,
         },
-        type: "donut"
+        type: 'donut',
       },
-      labels: ["High Risk", "Medium Risk", "Low Risk"],
+      labels: ['High Risk', 'Medium Risk', 'Low Risk'],
       responsive: [
         {
           breakpoint: 200,
           options: {
             chart: {
-              width: 200
+              width: 200,
             },
             legend: {
-              position: "bottom"
-            }
-          }
-        }
-      ]
-    };  
+              position: 'bottom',
+            },
+          },
+        },
+      ],
+    };
   }
+  ngOnChanges() {
+    this.calculatetotals();
 
+    this.chartOptions = {
+      ...this.chartOptions,
+      ...{
+        series: [this.highProjects, this.mediumProjects, this.lowProjects],
+      },
+    };
+  }
 }

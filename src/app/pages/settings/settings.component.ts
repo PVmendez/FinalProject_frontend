@@ -1,3 +1,4 @@
+import { User } from './../../interfaces/user';
 import { Router } from '@angular/router';
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { ProfileService } from 'src/app/services/profile.service';
@@ -9,14 +10,13 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./settings.component.css'],
 })
 export class SettingComponent {
-  user = {
-    id: '1',
-    username: 'Username',
-    email: 'prueba',
-    full_name: 'Full Name',
-    password: 'password',
-    photo:
-      'https://upload.wikimedia.org/wikipedia/commons/5/5a/John_Doe%2C_born_John_Nommensen_Duchac.jpg',
+  user: User = {
+    id: '',
+    username: '',
+    email: '',
+    full_name: '',
+    password: '',
+    photo: ''
   };
   showPassword: boolean = false;
   myForm: FormGroup;
