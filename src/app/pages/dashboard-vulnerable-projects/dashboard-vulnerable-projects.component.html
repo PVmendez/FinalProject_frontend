@@ -1,7 +1,6 @@
 <ion-header><app-dashboard></app-dashboard></ion-header>
 <ion-content class="title">
-    <h1>Most Vulnerable Projects</h1>
-    <div>{{date}}</div>
+    <h2>Most Vulnerable Projects {{date}}</h2>
     <app-projects-graph [projects]="projectsArray"></app-projects-graph>
     <ion-item-group>
         <ion-item *ngFor="let project of projectsArray">

@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+h1 {
+    color: #FFFF;
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: 600 !important;
+    background-color: #4e6e81;
+    margin: 0 !important;
+    padding: 1rem;
+}
