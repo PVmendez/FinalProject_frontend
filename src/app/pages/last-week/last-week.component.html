@@ -1,5 +1,6 @@
 <ion-content>
     <h1>This Week Results</h1> 
+    <app-last-week-graph [weekArray]="weekArray"></app-last-week-graph>
     <ion-item-group *ngFor="let day of weekDays; let i = index">
         <ion-item *ngIf="weekArray[day]">
             <ion-row>

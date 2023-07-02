@@ -9,16 +9,17 @@ import { LastWeekService } from 'src/app/services/last-week.service';
 })
 export class LastWeekComponent implements OnInit{
   weekArray: Week = {};
-  weekDays: string[] = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+  weekDays: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
   constructor(private lastWeekService: LastWeekService) {}
 
   ngOnInit() {
-    this.getDatos();
+    this.getData();
   }
 
-  async getDatos() {
+  async getData() {
     this.weekArray = await this.lastWeekService.getThisWeekVulnerabilities();
+    console.log(this.weekArray);
     return this.weekArray;
   }
 }
