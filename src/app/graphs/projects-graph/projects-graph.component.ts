@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { Vulnerability } from '../interfaces/vulnerability';
+import { Project } from '../../interfaces/project';
 
 import {
   ApexNonAxisChartSeries,
@@ -16,32 +16,35 @@ export type ChartOptions = {
 };
 
 @Component({
-  selector: 'app-vulnerability-graph',
-  templateUrl: './vulnerability-graph.component.html',
-  styleUrls: ['./vulnerability-graph.component.css'],
+  selector: 'app-projects-graph',
+  templateUrl: './projects-graph.component.html',
+  styleUrls: ['./projects-graph.component.css'],
 })
-export class VulnerabilityGraphComponent implements OnInit, OnChanges {
+export class ProjectsGraphComponent implements OnInit, OnChanges {
   public chartOptions!: ChartOptions;
-  @Input() vulnerabilities!: Vulnerability[];
+  @Input() projects!: Project[];
 
   constructor() {}
 
-  totalHighs: number = 0;
-  totalMedium: number = 0;
+  highProjects: number = 0;
+  mediumProjects: number = 0;
+  lowProjects: number = 0;
 
   calculatetotals() {
-    for (let index = 0; index < this.vulnerabilities?.length; index++) {
-      if (this.vulnerabilities[index].risk === 'Medium') {
-        this.totalMedium = this.totalMedium + this.vulnerabilities[index].total;
-      } else if (this.vulnerabilities[index].risk === 'High') {
-        this.totalHighs = this.totalHighs + this.vulnerabilities[index].total;
+    for (let index = 0; index < this.projects.length; index++) {
+      if (this.projects[index].risk_level === 'High') {
+        this.highProjects += 1;
+      } else if (this.projects[index].risk_level === 'Medium') {
+        this.mediumProjects += 1;
+      } else if (this.projects[index].risk_level === 'Low') {
+        this.lowProjects += 1;
       }
     }
   }
 
   ngOnInit() {
     this.chartOptions = {
-      colors: ['#E73520', '#F6FA70'],
+      colors: ['#E73520', '#F6FA70', '#00B961'],
       series: [],
       chart: {
         height: 300,
@@ -50,7 +53,7 @@ export class VulnerabilityGraphComponent implements OnInit, OnChanges {
         },
         type: 'donut',
       },
-      labels: ['Highs', 'Mediums'],
+      labels: ['High Risk', 'Medium Risk', 'Low Risk'],
       responsive: [
         {
           breakpoint: 200,
@@ -72,7 +75,7 @@ export class VulnerabilityGraphComponent implements OnInit, OnChanges {
     this.chartOptions = {
       ...this.chartOptions,
       ...{
-        series: [this.totalHighs, this.totalMedium],
+        series: [this.highProjects, this.mediumProjects, this.lowProjects],
       },
     };
   }

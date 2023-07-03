@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from 'src/app/services/profile.service';
-import { AuthenticationService } from '../services/authentication.service';
+import { AuthenticationService } from '../../services/authentication.service';
 import { Router } from '@angular/router';
-import { DashboardService } from '../services/dashboard.service';
-import { Project } from '../interfaces/project';
-import { User } from '../interfaces/user';
+import { DashboardService } from '../../services/dashboard.service';
+import { Project } from '../../interfaces/project';
+import { User } from '../../interfaces/user';
 
 @Component({
   selector: 'app-user-profile',
