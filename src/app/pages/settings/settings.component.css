@@ -25,6 +25,10 @@ ion-card {
     }
   }
 }
+.password{
+  align-items: center;
+  width: 100%;
+}
 
 ion-button {
   --background: #4e6e81;;

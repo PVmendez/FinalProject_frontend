@@ -14,6 +14,7 @@ h1 {
     background-color: transparent;
 }
 ion-text {
+    margin-bottom: 20%;
     font-size: 80%;
     font-weight: 600;
     color: #ffffff;
@@ -32,3 +33,9 @@ ion-row {
     align-items: center;
     flex: 1;
 }
+/* @media screen and (min-height: 750px) {
+    ion-text {
+        margin-bottom: 20%;
+    }
+    
+} */

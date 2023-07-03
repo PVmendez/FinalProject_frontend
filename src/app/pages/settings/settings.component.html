@@ -7,20 +7,21 @@
         <ion-card>
           <ion-card-content>
             <form [formGroup]="myForm">
-                <ion-item>
-                  <ion-label position="stacked">Name</ion-label>
-                  <ion-input type="text" formControlName="name" [value]="user.full_name"></ion-input>
-                </ion-item>
-
-                <ion-item>
-                  <ion-label position="stacked">Username</ion-label>
-                  <ion-input type="text" formControlName="username" [value]="user.username"></ion-input>
-                </ion-item>
-
-                <ion-item class="password" lines="none">
-                  <ion-label position="stacked">Password</ion-label>
-                  <ion-input type="password" formControlName="password" [value]="user.password"></ion-input>
-                </ion-item>
+              <ion-item>
+                <ion-label position="stacked">Name</ion-label>
+                <ion-input type="text" formControlName="name" [value]="user.full_name"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="stacked">Username</ion-label>
+                <ion-input type="text" formControlName="username" [value]="user.username"></ion-input>
+              </ion-item>
+              <ion-item class="password" lines="none">
+                <ion-label position="stacked">Password</ion-label>
+                <ion-input type="password" formControlName="password" [value]="user.password"
+                  [type]="showPassword ? 'text' : 'password'" (ngModel)="password" name="password"></ion-input>
+                <ion-icon slot="end" name="{{ showPassword ? 'eye-off' : 'eye' }}" id="toggle"
+                  (click)="togglePassword()"></ion-icon>
+              </ion-item>
             </form>
           </ion-card-content>
         </ion-card>
@@ -39,6 +40,5 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
   <ion-button class="center-button" (click)="saveChanges()">Save changes</ion-button>
 </ion-content>
