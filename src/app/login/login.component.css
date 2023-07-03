@@ -28,6 +28,7 @@ ion-content {
     height: 100%;
 }  
 ion-text {
+    margin-bottom: 2rem;
     font-size: 80%;
     font-weight: 600;
     color: #ffffff;
@@ -45,4 +46,10 @@ ion-row {
     justify-content: center;
     align-items: center;
     flex: 1;
+}
+@media screen and (min-height: 700px) {
+    ion-text {
+        margin-bottom: 10%;
+    }
+    
 }
