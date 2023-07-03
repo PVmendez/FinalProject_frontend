@@ -1,34 +1,41 @@
 <ion-header><app-dashboard></app-dashboard></ion-header>
-<ion-content>
-    <h2>Results by Engine {{date}}</h2>
-    <app-graphs [engine]="engines"></app-graphs>
-    <ion-item-group>
-        <ion-item>
-            <ion-row>
-                <div class="Projects">
-                    <ion-icon style="color: #599DF4;" aria-hidden="true" name="ellipse">></ion-icon>
-                    <ion-col>SAST</ion-col>
-                </div>
-                <ion-col class="Vulnerability">{{engines.SAST}}</ion-col>
-            </ion-row>
-        </ion-item>
-        <ion-item>
-            <ion-row>
-                <div class="Projects">
-                    <ion-icon style="color: #7FE2A7;" aria-hidden="true" name="ellipse"></ion-icon>
-                    <ion-col>SCA</ion-col>
-                </div>
-                <ion-col class="Vulnerability">{{engines.SCA}}</ion-col>
-            </ion-row>
-        </ion-item>
-        <ion-item>
-            <ion-row>
-                <div class="Projects">
-                    <ion-icon style="color: #F7B963;" aria-hidden="true" name="ellipse"></ion-icon>
-                    <ion-col>IaC</ion-col>
-                </div>
-                <ion-col class="Vulnerability">{{engines.IaC}}</ion-col>
-            </ion-row>
-        </ion-item>
-    </ion-item-group>
+<ion-content>    
+    <div *ngIf="dataExists">
+        <h1>Results by Engine</h1>
+        <div>{{date}}</div>
+
+        <app-graphs [engine]="engines"></app-graphs>
+        <ion-item-group>
+            <ion-item>
+                <ion-row>
+                    <div class="Projects">
+                        <ion-icon style="color: #599DF4;" aria-hidden="true" name="ellipse">></ion-icon>
+                        <ion-col>SAST</ion-col>
+                    </div>
+                    <ion-col class="Vulnerability">{{engines.SAST}}</ion-col>
+                </ion-row>
+            </ion-item>
+            <ion-item>
+                <ion-row>
+                    <div class="Projects">
+                        <ion-icon style="color: #7FE2A7;" aria-hidden="true" name="ellipse"></ion-icon>
+                        <ion-col>SCA</ion-col>
+                    </div>
+                    <ion-col class="Vulnerability">{{engines.SCA}}</ion-col>
+                </ion-row>
+            </ion-item>
+            <ion-item>
+                <ion-row>
+                    <div class="Projects">
+                        <ion-icon style="color: #F7B963;" aria-hidden="true" name="ellipse"></ion-icon>
+                        <ion-col>IaC</ion-col>
+                    </div>
+                    <ion-col class="Vulnerability">{{engines.IaC}}</ion-col>
+                </ion-row>
+            </ion-item>
+        </ion-item-group>
+    </div>
+    <div *ngIf="!dataExists" class="no-results-msg">
+        <h1>There are no scan results for the selected date</h1>
+    </div>
 </ion-content>
