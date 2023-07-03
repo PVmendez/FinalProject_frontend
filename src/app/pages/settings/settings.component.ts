@@ -18,6 +18,7 @@ export class SettingComponent {
     password: '',
     photo: '',
   };
+  password!: string;
   showPassword: boolean = false;
   myForm: FormGroup = new FormGroup({
     name: new FormControl(''),
