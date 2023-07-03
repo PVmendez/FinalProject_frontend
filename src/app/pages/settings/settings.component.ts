@@ -16,10 +16,14 @@ export class SettingComponent {
     email: '',
     full_name: '',
     password: '',
-    photo: ''
+    photo: '',
   };
   showPassword: boolean = false;
-  myForm: FormGroup;
+  myForm: FormGroup = new FormGroup({
+    name: new FormControl(''),
+    username: new FormControl(''),
+    password: new FormControl(''),
+  });
   selectedFile: File | undefined;
   selectedFileDataUrl: string | null = null;
 
@@ -27,18 +31,18 @@ export class SettingComponent {
     private profileService: ProfileService,
     private cdr: ChangeDetectorRef,
     private router: Router
-  ) {
+  ) {}
+
+  async ngOnInit() {
+    const user = await this.profileService.getUser();
+    this.user = user;
+
     this.myForm = new FormGroup({
       name: new FormControl(this.user.full_name),
       username: new FormControl(this.user.username),
       password: new FormControl(this.user.password),
     });
     this.selectedFile = undefined;
-  }
-
-  async ngOnInit() {
-    const user = await this.profileService.getUser();
-    this.user = user;
 
     this.cdr.detectChanges();
   }
@@ -52,7 +56,7 @@ export class SettingComponent {
     };
     const response = await this.profileService.updateUser(updatedUser);
 
-    this.router.navigateByUrl('/user-profile')
+    this.router.navigateByUrl('/user-profile');
     return response;
   }
 
