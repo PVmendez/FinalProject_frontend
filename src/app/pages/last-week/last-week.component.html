@@ -5,7 +5,7 @@
         <ion-item *ngIf="weekArray[day]">
             <ion-row>
                 <div class="Days">
-                    <ion-icon aria-hidden="true" name="ellipse"></ion-icon>
+                    <ion-icon [ngStyle]="{'color': getWeekColor(day)}" name="ellipse"></ion-icon>
                     <ion-col>{{day}}</ion-col>
                 </div>
                 <ion-col class="Vulnerability">{{weekArray[day]}}</ion-col>

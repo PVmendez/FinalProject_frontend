@@ -41,7 +41,7 @@ export class UserProfileComponent implements OnInit {
     const projectsArray = await this.dashboardService.getMostVulnerableProjects()
     this.projectsArray = projectsArray;
     this.projectsArray.forEach(project => {
-      if ((project.risk_level === "High" && project.levels.high >= 10) || (project.risk_level === "Medium" && project.levels.medium >= 6)) {    
+      if ((project.risk_level === "High" && project.levels.high >= 2) || (project.risk_level === "Medium" && project.levels.medium >= 5)) {    
         this.notifications.push(project);
       }
     });
