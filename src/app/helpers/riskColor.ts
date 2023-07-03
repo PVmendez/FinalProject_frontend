@@ -12,5 +12,19 @@ export const getRiskColor = (riskLevel: string) => {
   return '#CCCCCC';
 };
 
+export const getWeekColor = (day: string) => {
+  const colorMap: { [key: string]: string } = {
+    Monday: '#008FFB',
+    Tuesday: '#00E396',
+    Wednesday: '#FEB019',
+    Thursday: '#FF4560',
+    Friday: '#775DD0',
+    Saturday: '#546E7A',
+    Sunday: '#26a69a'
+  };
+  if (day in colorMap) {
+    return colorMap[day];
+  }
 
-
+  return '#CCCCCC';
+}
