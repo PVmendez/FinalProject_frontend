@@ -9,12 +9,13 @@ form {
     padding: 1.5rem;
 } 
 .button {
+    box-shadow: 3px 3px 10px black;
     border: none;
     font-size: 16px;
     background-color: #fff;
     color: #000000;
     border-radius: 100px;
-    margin-top: 20px!important;
+    margin-top: 2rem !important;
 }
 .email, .password, .button {
     display: block;
