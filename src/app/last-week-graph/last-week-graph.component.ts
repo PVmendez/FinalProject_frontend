@@ -66,7 +66,6 @@ export class LastWeekGraphComponent implements OnInit, OnChanges{
         '#775DD0',
         '#546E7A',
         '#26a69a',
-        '#D10CE8',
       ],
       plotOptions: {
         bar: {

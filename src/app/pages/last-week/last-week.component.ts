@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { getWeekColor } from 'src/app/helpers/riskColor';
 import { Week } from 'src/app/interfaces/week';
 import { LastWeekService } from 'src/app/services/last-week.service';
 
@@ -20,5 +21,9 @@ export class LastWeekComponent implements OnInit{
   async getData() {
     this.weekArray = await this.lastWeekService.getThisWeekVulnerabilities();
     return this.weekArray;
+  }
+
+  getWeekColor(day: string) {
+    return getWeekColor(day);
   }
 }
