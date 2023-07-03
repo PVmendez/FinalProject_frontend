@@ -29,7 +29,7 @@
         <ion-card>
           <ion-card-content class="profile-content">
             <div class="profile-image-container">
-              <ion-img [src]="selectedFileDataUrl ?? user.photo" class="profile-image"></ion-img>
+              <ion-img [src]='selectedFileDataUrl ?? "../../assets/default.jpg"' class="profile-image"></ion-img>
             </div>
             <div class="profile-button-container">
               <ion-input type="file" (change)="onFileSelected($event)"></ion-input>
