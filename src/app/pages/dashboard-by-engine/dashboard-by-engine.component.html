@@ -1,9 +1,7 @@
 <ion-header><app-dashboard></app-dashboard></ion-header>
 <ion-content>    
     <div *ngIf="dataExists">
-        <h1>Results by Engine</h1>
-        <div>{{date}}</div>
-
+        <h2>Results by Engine {{date}}</h2>
         <app-graphs [engine]="engines"></app-graphs>
         <ion-item-group>
             <ion-item>
@@ -36,6 +34,6 @@
         </ion-item-group>
     </div>
     <div *ngIf="!dataExists" class="no-results-msg">
-        <h1>There are no scan results for the selected date</h1>
+        <h3>There are no scan results for the selected date</h3>
     </div>
 </ion-content>

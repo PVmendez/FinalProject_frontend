@@ -1,8 +1,7 @@
 <ion-header><app-dashboard></app-dashboard></ion-header>
 <ion-content>
     <div *ngIf="dataExists">
-        <h1>Most Vulnerable Projects</h1>
-        <div>{{date}}</div>
+        <h2>Most Vulnerable Projects {{date}}</h2>
         <app-projects-graph [projects]="projectsArray"></app-projects-graph>
         <ion-item-group>
             <ion-item *ngFor="let project of projectsArray">
@@ -17,6 +16,6 @@
         </ion-item-group>
     </div>
     <div *ngIf="!dataExists" class="no-results-msg">
-        <h1>There are no scan results for the selected date</h1>
+        <h3>There are no scan results for the selected date</h3>
     </div>
 </ion-content>
