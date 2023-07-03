@@ -1,0 +1,14 @@
+<form [formGroup]="myForm" (ngSubmit)="submitForm()">
+
+    <ion-input fill="outline" placeholder="Username" formControlName="username" type="text"></ion-input>    
+    <ion-input fill="outline" placeholder="Full Name" formControlName="full_name" type="text"></ion-input>
+    <ion-input fill="outline" placeholder="Email" formControlName="email" type="email"></ion-input>
+    <ion-input fill="outline" placeholder="Password" formControlName="password"
+        [type]="showPassword ? 'text' : 'password'" (ngModel)="password" name="password"></ion-input>
+    <ion-input fill="outline" placeholder="Confirm Password" formControlName="confirmPassword"
+        [type]="showConfirmPassword ? 'text' : 'Password'" (ngModel)="confirmPassword"
+        name="confirm_password"></ion-input>
+    <ion-text id="toggle" (click)="togglePassword()">{{ showPassword ? 'Hide' : 'Show' }}</ion-text>
+    <ion-button class="button" shape="round" type="submit" color="#4E6E81" [disabled]="!myForm.valid">Sign
+        Up</ion-button>
+</form>

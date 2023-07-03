@@ -1,0 +1,12 @@
+<form [formGroup]="myForm" (ngSubmit)="submitForm()">
+  <ion-item class="email" lines="none">
+    <ion-input placeholder="Email" formControlName="email" type="email"></ion-input>
+  </ion-item>
+  <ion-item class="password" lines="none">
+    <ion-input placeholder="Password" formControlName="password"
+      [type]="showPassword ? 'text' : 'password'"></ion-input>
+    <ion-icon slot="end" name="{{ showPassword ? 'eye-off' : 'eye' }}" id="toggle"
+      (click)="togglePassword()"></ion-icon>
+  </ion-item>
+  <ion-button class="button" shape="round" type="submit" color="#fff">Log In</ion-button>
+</form>

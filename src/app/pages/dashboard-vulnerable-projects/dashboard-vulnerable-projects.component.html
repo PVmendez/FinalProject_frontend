@@ -1,16 +1,21 @@
-<app-dashboard></app-dashboard>
-<ion-content class="title">
-    <h1>Most Vulnerable Projects</h1>
-    
-    <ion-item-group>
-        <ion-item *ngFor="let project of projectsArray">
-            <ion-row>
-                <div class="Projects">
-                    <ion-icon [ngStyle]="{'color': getColor(project.risk_level)}" name="ellipse"></ion-icon>
-                    <ion-col>{{project.project_name}}</ion-col>
-                </div>
-                <ion-col class="Vulnerability">{{project.levels.high}} High / {{project.levels.medium}} Medium</ion-col>
-            </ion-row>
-        </ion-item>
-    </ion-item-group>
+<ion-header><app-dashboard></app-dashboard></ion-header>
+<ion-content>
+    <div *ngIf="dataExists">
+        <h2>Most Vulnerable Projects {{date}}</h2>
+        <app-projects-graph [projects]="projectsArray"></app-projects-graph>
+        <ion-item-group>
+            <ion-item *ngFor="let project of projectsArray">
+                <ion-row>
+                    <div class="Projects">
+                        <ion-icon [ngStyle]="{'color': getColor(project.risk_level)}" name="ellipse"></ion-icon>
+                        <ion-col>{{project.project_name}}</ion-col>
+                    </div>
+                    <ion-col class="Vulnerability">{{project.levels.high}} High / {{project.levels.medium}} Medium</ion-col>
+                </ion-row>
+            </ion-item>
+        </ion-item-group>
+    </div>
+    <div *ngIf="!dataExists" class="no-results-msg">
+        <h3>There are no scan results for the selected date</h3>
+    </div>
 </ion-content>

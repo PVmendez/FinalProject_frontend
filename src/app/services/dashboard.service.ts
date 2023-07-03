@@ -1,25 +1,42 @@
 import { Injectable } from '@angular/core';
+import Api from '../helpers/api';
+import { LocalStorageService } from 'angular-web-storage';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DashboardService {
+  jwtToken = '';
 
-  async getEngines() {
-    const data = await fetch('http://localhost:3000/engines');
-    const response = await data.json();
+  constructor(private localStorage: LocalStorageService) { this.jwtToken = this.localStorage.get('token'); }
+
+  async getEngines(filterByDate = null) {
+    let uri = '/engines';
+
+    if (filterByDate) { uri += `?filterByDate=${filterByDate}` }
+  
+    const response = Api(uri, 'GET', this.jwtToken);
+
     return response;
   }
 
-  async getMostVulnerableProjects() {
-    const data = await fetch('http://localhost:3000/projects');
-    const response = await data.json();
+  async getMostVulnerableProjects(filterByDate = null) {
+    let uri = '/projects';
+
+    if (filterByDate) { uri += `?filterByDate=${filterByDate}` }
+
+    const response = Api(uri, 'GET', this.jwtToken);
+
     return response;
   }
 
-   async getVulnerabilities() {
-     const data = await fetch('http://localhost:3000/vulnerabilities');
-     const response = await data.json();
-     return response;
-   }
+  async getVulnerabilities(filterByDate = null) {
+    let uri = '/vulnerabilities';
+
+    if (filterByDate) { uri += `?filterByDate=${filterByDate}` }
+
+    const response = Api(uri, 'GET', this.jwtToken);
+
+    return response;
+  }
 }

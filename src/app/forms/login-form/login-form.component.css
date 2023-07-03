@@ -1,0 +1,47 @@
+body,
+section {
+    height: 100%;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1.5rem;
+} 
+.button {
+    box-shadow: 3px 3px 10px black;
+    border: none;
+    font-size: 16px;
+    background-color: #fff;
+    color: #000000;
+    border-radius: 100px;
+    margin-top: 2rem !important;
+}
+.email, .password, .button {
+    display: block;
+    margin: 0 auto;
+    width: 20rem;
+}
+ion-text {
+    margin-top: 1rem;
+    text-align: right;
+    padding-right: 1.5rem;
+    color: #1f1f1f;
+    font-weight: bold;
+}
+ion-item::part(native) {
+    border-color: #212020;
+    border-width: 1px;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+    padding-left: 30px;
+}
+@media screen and (min-width: 400px) {
+    ion-text {
+        text-align: center;
+    }
+}
+
+.p-24 {
+    padding: 24px;
+}

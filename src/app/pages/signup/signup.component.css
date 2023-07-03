@@ -1,0 +1,35 @@
+.section {
+    height: 100%;
+    background-color: #5694D4;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+h1 {
+    font-size: xx-large;
+    background-color: transparent;
+}
+ion-text {
+    margin-bottom: 20%;
+    font-size: 80%;
+    font-weight: 600;
+    color: #ffffff;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+ion-button {
+    font-size:90%;
+    font-weight: 600;
+    color: #ffffff;
+}
+ion-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
