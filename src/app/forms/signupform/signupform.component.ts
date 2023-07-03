@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthenticationService } from '../services/authentication.service';
+import { AuthenticationService } from '../../services/authentication.service';
 import { ToastController } from '@ionic/angular';
-import { MessagesService } from '../services/messages.service';
+import { MessagesService } from '../../services/messages.service';
 
 @Component({
   selector: 'app-signupform',

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { getWeekColor } from 'src/app/helpers/riskColor';
+import { getWeekColor } from 'src/app/helpers/getColors';
 import { Week } from 'src/app/interfaces/week';
-import { LastWeekService } from 'src/app/services/last-week.service';
+import { LastWeekService } from 'src/app/services/weekly-view.service';
 
 @Component({
   selector: 'app-last-week',
-  templateUrl: './last-week.component.html',
-  styleUrls: ['./last-week.component.css']
+  templateUrl: './weekly-view.component.html',
+  styleUrls: ['./weekly-view.component.css']
 })
 export class LastWeekComponent implements OnInit{
   weekArray: Week = {};

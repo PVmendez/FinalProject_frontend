@@ -1,7 +1,7 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { Project } from 'src/app/interfaces/project';
 import { DashboardService } from 'src/app/services/dashboard.service';
-import { getRiskColor } from 'src/app/helpers/riskColor';
+import { getRiskColor } from 'src/app/helpers/getColors';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

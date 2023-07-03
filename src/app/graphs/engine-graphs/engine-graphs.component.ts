@@ -18,8 +18,8 @@ export type ChartOptions = {
 
 @Component({
   selector: 'app-graphs',
-  templateUrl: './graphs.component.html',
-  styleUrls: ['./graphs.component.css'],
+  templateUrl: './engine-graphs.component.html',
+  styleUrls: ['./engine-graphs.component.css'],
 })
 export class GraphsComponent implements OnInit, OnChanges {
   public chartOptions!: ChartOptions;

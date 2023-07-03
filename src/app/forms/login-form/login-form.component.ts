@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { AuthenticationService } from '../services/authentication.service';
-import { MessagesService } from '../services/messages.service';
+import { AuthenticationService } from '../../services/authentication.service';
+import { MessagesService } from '../../services/messages.service';
 
 @Component({
   selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  templateUrl: './login-form.component.html',
+  styleUrls: ['./login-form.component.css']
 })
 export class FormComponent implements OnInit {
   public myForm!: FormGroup;

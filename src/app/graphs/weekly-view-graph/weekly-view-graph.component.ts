@@ -8,7 +8,7 @@ import {
   ApexLegend,
   ApexGrid,
 } from 'ng-apexcharts';
-import { Week } from '../interfaces/week';
+import { Week } from '../../interfaces/week';
 
 type ApexXAxis = {
   type?: 'category' | 'datetime' | 'numeric';
@@ -34,8 +34,8 @@ export type ChartOptions = {
 
 @Component({
   selector: 'app-last-week-graph',
-  templateUrl: './last-week-graph.component.html',
-  styleUrls: ['./last-week-graph.component.css'],
+  templateUrl: './weekly-view-graph.component.html',
+  styleUrls: ['./weekly-view-graph.component.css'],
 })
 export class LastWeekGraphComponent implements OnInit, OnChanges{
   public chartOptions!: ChartOptions;
